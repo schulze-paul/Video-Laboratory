@@ -1,19 +1,46 @@
 
 # from googleapiclient.discovery import build
+class youtubeAPIdata:
+    authToken = 'AIzaSyDeXi9GABxJhqK8u9nj86NsayQJzMiPC_Q'
+    videoParameters = nan
+    videoLink = nan
+    channelParameters = nan
+    channelLink = nan
 
-authToken = 'AIzaSyDeXi9GABxJhqK8u9nj86NsayQJzMiPC_Q'
+class sortedData():
+    videoLink = nan
+    videoId = nan
+    videoTitle = nan
+    videoLength = nan
+    videoViews = nan
+    videoLikes = nan
+    videoDislikes = nan
+    videoUpload = nan
 
-class videoData():
-    videoLink = 'https://www.youtube.com/watch?v=123456'
-    videoId = videoLink[32:]
-    authToken
+    commentsNo = nan
+    commentsList = nan
+    commentsPinned = nan
 
-    def __init__(self, videoLink, authToken):
+    channelLink = nan
+    channelId = nan
+    channelName = nan
+    channelSubscribers = nan
+
+
+    def __init__(self, videoLink):
         self.videoLink = videoLink
-        self.videoId = self.videoLink[32:]
-        self.authToken = authToken
 
+def getVideoData(youtubeAPIdata, videoLink):
+    
+    # get video id from video link
+    sortedData = sortedData(videoLink)
+    sortedData.video.Id = videoLinkToId(sortedData.video.Id)
+    # make a request to the youtube api
+    rawVideoData = getFunction(youtubeAPIdata, sortedData.video.Id.)
+    
+    # sort the video data
+    sortedData.video.views = rawVideoData.items[0].views
+    sortedData.channel.name = rawVideoData.items[0].channelName
 
-ethoData = videoData('https://www.youtube.com/watch?v=hEfDdlY62J4', authToken)
-
-print(ethoData.authToken)
+    # get the channel id from the channel link
+    
