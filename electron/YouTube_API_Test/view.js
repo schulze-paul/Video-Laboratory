@@ -207,23 +207,23 @@ function writeDataExcelFile(sortedData, fileName) {
 
   //put the video data into the specific cells
 
-  fourLetter.val = "test123"; //sortedData.fourLetter;
-  ownId.val = sortedData.ownId;
-  recordingDate.val = sortedData.recordingDate;
-  codingPerson.val = sortedData.codingPerson;
+  fourLetter.value = sortedData.fourLetter;
+  ownId.value = sortedData.ownId;
+  recordingDate.value = sortedData.recordingDate;
+  codingPerson.value = sortedData.codingPerson;
 
-  videoTitle.val = sortedData.video.title;
-  videoLink.val = sortedData.video.link;
-  videoDuration.val = sortedData.video.duration;
-  videoUpvotes.val = sortedData.video.upvoteCount;
-  videoDownvotes.val = sortedData.video.downvoteCount;
-  commentsCount.val = sortedData.video.commentsCount;
-  videoViews.val = sortedData.video.viewCount;
+  videoTitle.value = sortedData.video.title;
+  videoLink.value = sortedData.video.link;
+  videoDuration.value = sortedData.video.duration;
+  videoUpvotes.value = sortedData.video.upvoteCount;
+  videoDownvotes.value = sortedData.video.downvoteCount;
+  commentsCount.value = sortedData.video.commentsCount;
+  videoViews.value = sortedData.video.viewCount;
 
-  channelName.val = sortedData.channel.name;
-  channelJoin.val = sortedData.channel.publish;
-  channelSubs.val = sortedData.channel.subsCount;
-  channelVideoCount.val = sortedData.channel.videoCount;
+  channelName.value = sortedData.channel.name;
+  channelJoin.value = sortedData.channel.publish;
+  channelSubs.value = sortedData.channel.subsCount;
+  channelVideoCount.value = sortedData.channel.videoCount;
 
   // Save Excel on Hard Disk
   workbook.xlsx.writeFile(fileName + ".xlsx").then(function () {
