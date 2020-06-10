@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>File System</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style type="text/css">
+      #contact-list {
+        height: 150px;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Enter Link of the YouTube Video</h1>
+      <label for="videoLinkInputLabel">Video Link</label>
+      <input
+        type="link"
+        name="videoLinkInput"
+        value="https://www.youtube.com/watch?v=9sWEecNUW-o&list=PL41L5nRx4jlqgRlr8oPwjEgToB9fCAL1R&index=3&t=1455s"
+        id="videoLinkInput"
+        placeholder="Video Link"
+        class="form-control"
+        required
+      />
+      <label for="ownIdInputLabel">own ID</label>
+
+      <input
+        type="text"
+        name="ownIdInput"
+        value="1-TestFile"
+        id="ownIdInput"
+        placeholder="Own ID"
+        class="form-control"
+        required
+      />
+      <button
+        onclick="javasript:goButtonPressed()"
+        class="btn btn-primary"
+        id="submitVideoLink"
+      >
+        Go!
+      </button>
+
+      <button
+        onclick="javasript:writeDataExcelFile(sortedVideoData, sortedVideoData.ownId)"
+        class="btn btn-primary"
+        id="exportButton"
+      >
+        export excel sheet
+      </button>
+
+      <div>
+        <label id="fourLetter"></label>
+      </div>
+      <div>
+        <label id="recordingDate"></label>
+      </div>
+      <div>
+        <label id="codingPerson"></label>
+      </div>
+      <div>
+        <label id="videoLinkLabel"></label>
+      </div>
+      <div>
+        <label id="videoTitle"></label>
+      </div>
+      <div>
+        <label id="ownIdLabel"></label>
+      </div>
+      <div>
+        <label id="videoLength"></label>
+      </div>
+      <div>
+        <label id="channelName"></label>
+      </div>
+      <div>
+        <label id="channelSubs"></label>
+      </div>
+
+      <div id="contact-list">
+        <table class="table-striped" id="contact-table">
+          <tr>
+            <th class="col-xs-2">S. No.</th>
+            <th class="col-xs-4">Name</th>
+            <th class="col-xs-6">Email</th>
+          </tr>
+        </table>
+      </div>
+
+      <script src="./view.js"></script>
+      <script src="https://apis.google.com/js/api.js"></script>
+    </div>
+  </body>
+</html>
