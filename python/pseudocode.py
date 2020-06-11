@@ -44,3 +44,18 @@ def getVideoData(youtubeAPIdata, videoLink):
 
     # get the channel id from the channel link
     
+
+class formElement():
+    question = ""
+    typeInput = false;
+    buttonCount = 4;
+    buttonLabels = ["No", "Yes, between Youtubers", "Yes, with an External Partner", "Not apparent"];
+    buttonData = [77, 1, 2, 66]
+
+    __init__(self, question, typeInput, noTypeInputData, buttonCount, buttonLabels, buttonData):
+        self.question
+        createHTML(self)
+
+
+
+
