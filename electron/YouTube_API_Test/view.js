@@ -49,6 +49,10 @@ function goButtonPressed() {
       console.log(sortedVideoData);
     });
   });
+
+  // enable export button
+  exportButton = document.getElementById("exportButton");
+  exportButton.disabled = false;
 }
 
 function sortVideoData(data, ownId, date) {

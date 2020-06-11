@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>File System</title>
+    <title>YouTube Video Coding</title>
     <link rel="stylesheet" href="style.css" />
 
     <style type="text/css">
@@ -26,8 +26,9 @@
         class="form-control"
         required
       />
+    </div>
+    <div>
       <label for="ownIdInputLabel">own ID</label>
-
       <input
         type="text"
         name="ownIdInput"
@@ -37,21 +38,25 @@
         class="form-control"
         required
       />
+    </div>
+    <div>
       <button
-        onclick="javasript:goButtonPressed()"
-        class="btn btn-primary"
-        id="submitVideoLink"
+      onclick="javasript:goButtonPressed()"
+      class="btn btn-primary"
+      id="submitVideoLink"
       >
-        Go!
+      Go!
       </button>
 
       <button
-        onclick="javasript:writeDataExcelFile(sortedVideoData, sortedVideoData.ownId)"
-        class="btn btn-primary"
-        id="exportButton"
-      >
-        export excel sheet
+      onclick="javasript:writeDataExcelFile(sortedVideoData, sortedVideoData.ownId)"
+      class="btn btn-primary"
+      id="exportButton"
+      disabled
+      >   
+      export excel sheet
       </button>
+    </div>
 
       <div>
         <label id="fourLetter"></label>
