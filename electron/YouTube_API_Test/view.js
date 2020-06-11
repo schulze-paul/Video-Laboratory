@@ -53,6 +53,8 @@ function goButtonPressed() {
   // enable export button
   exportButton = document.getElementById("exportButton");
   exportButton.disabled = false;
+  createFormButton = document.getElementById("createForm");
+  createFormButton.disabled = false;
 }
 
 function sortVideoData(data, ownId, date) {
@@ -181,33 +183,80 @@ function writeDataExcelFile(sortedData, fileName) {
   // A table header
 
   // find locations of all the data which can be put into the excel sheet
-  const fourLetter = sheet.getCell("C1");
-  const recordingDate = sheet.getCell("D1");
-  const codingPerson = sheet.getCell("E1");
-  const videoLink = sheet.getCell("F1");
-  const videoTitle = sheet.getCell("G1");
-  const ownId = sheet.getCell("H1");
-  const videoDuration = sheet.getCell("I1");
-  const channelName = sheet.getCell("J1");
-  const channelSubs = sheet.getCell("Q1");
-  const personalWebsite = sheet.getCell("S1");
-  const tiktokBin = sheet.getCell("T1");
-  const tiktokLink = sheet.getCell("U1");
-  const instagramBin = sheet.getCell("V1");
-  const instagramLink = sheet.getCell("W1");
-  const facebookBin = sheet.getCell("X1");
-  const facebookLink = sheet.getCell("Y1");
-  const twitterBin = sheet.getCell("Z1");
-  const twitterLink = sheet.getCell("AA1");
-  const otherSocialmedia = sheet.getCell("AB1");
-  const videoDate = sheet.getCell("AG1");
-  const channelJoin = sheet.getCell("AD1");
-  const channelVideoCount = sheet.getCell("AE1");
-  const videoViews = sheet.getCell("AH1");
-  const videoUpvotes = sheet.getCell("AI1");
-  const videoDownvotes = sheet.getCell("AJ1");
-  const commentsCount = sheet.getCell("AX1");
-  const commentsPinned = sheet.getCell("AY1");
+  {
+    const fourLetter = sheet.getCell("C1");
+    const recordingDate = sheet.getCell("D1");
+    const codingPerson = sheet.getCell("E1");
+    const videoLink = sheet.getCell("F1");
+    const videoTitle = sheet.getCell("G1");
+    const ownId = sheet.getCell("H1");
+    const videoDuration = sheet.getCell("I1");
+    const channelName = sheet.getCell("J1");
+    const channelSubs = sheet.getCell("Q1");
+    const personalWebsite = sheet.getCell("S1");
+    const tiktokBin = sheet.getCell("T1");
+    const tiktokLink = sheet.getCell("U1");
+    const instagramBin = sheet.getCell("V1");
+    const instagramLink = sheet.getCell("W1");
+    const facebookBin = sheet.getCell("X1");
+    const facebookLink = sheet.getCell("Y1");
+    const twitterBin = sheet.getCell("Z1");
+    const twitterLink = sheet.getCell("AA1");
+    const otherSocialmedia = sheet.getCell("AB1");
+    const videoDate = sheet.getCell("AG1");
+    const channelJoin = sheet.getCell("AD1");
+    const channelVideoCount = sheet.getCell("AE1");
+    const videoViews = sheet.getCell("AH1");
+    const videoUpvotes = sheet.getCell("AI1");
+    const videoDownvotes = sheet.getCell("AJ1");
+    const commentsCount = sheet.getCell("AX1");
+    const commentsPinned = sheet.getCell("AY1");
+  }
+
+  // data from the questionnaire
+  {
+    questionCell = [];
+    question[10] = sheet.getCell("K1");
+    question[11] = sheet.getCell("L1");
+    question[12] = sheet.getCell("M1");
+    question[13] = sheet.getCell("N1");
+    question[14] = sheet.getCell("O1");
+    question[15] = sheet.getCell("P1");
+    question[17] = sheet.getCell("R1");
+    question[28] = sheet.getCell("AC1");
+    question[31] = sheet.getCell("AF1");
+    question[36] = sheet.getCell("AK1");
+    question[37] = sheet.getCell("AL1");
+    question[38] = sheet.getCell("AM1");
+    question[39] = sheet.getCell("AN1");
+    question[40] = sheet.getCell("AO1");
+    question[41] = sheet.getCell("AP1");
+    question[42] = sheet.getCell("AQ1");
+    question[43] = sheet.getCell("AR1");
+    question[44] = sheet.getCell("AS1");
+    question[45] = sheet.getCell("AT1");
+    question[46] = sheet.getCell("AU1");
+    question[47] = sheet.getCell("AV1");
+    question[48] = sheet.getCell("AW1");
+    question[51] = sheet.getCell("AZ1");
+    question[52] = sheet.getCell("BA1");
+    question[53] = sheet.getCell("BB1");
+    question[54] = sheet.getCell("BC1");
+    question[55] = sheet.getCell("BD1");
+    question[56] = sheet.getCell("BE1");
+    question[57] = sheet.getCell("BF1");
+    question[58] = sheet.getCell("BG1");
+    question[59] = sheet.getCell("BH1");
+    question[60] = sheet.getCell("BI1");
+    question[61] = sheet.getCell("BJ1");
+    question[62] = sheet.getCell("BK1");
+    question[63] = sheet.getCell("BL1");
+    question[64] = sheet.getCell("BM1");
+    question[65] = sheet.getCell("BN1");
+    question[66] = sheet.getCell("BO1");
+    question[67] = sheet.getCell("BP1");
+    question[68] = sheet.getCell("BQ1");
+  }
 
   //put the video data into the specific cells
 
@@ -235,3 +284,77 @@ function writeDataExcelFile(sortedData, fileName) {
     alert("File Saved");
   });
 }
+
+function createForm(sortedData) {
+  var formId = 10;
+  var question = "Is the video a collaborative project?";
+  var typeInput = false;
+  var buttonLabel = [
+    "No",
+    "Yes, between Youtubers",
+    "Yes, with an External Partner",
+    "Not apparent",
+  ];
+  var buttonData = [77, 1, 2, 66];
+
+  if (typeInput == true) {
+    $("body").append(`
+      <article class="item" data-key="${formId}">
+        <h4>${question}</h4>
+        <input
+        type="${type}"
+        name="input${formId}"
+        value=""
+        id="input${formId}"
+        placeholder="${placeholder}"
+        class="form-control"
+        required
+      />
+      </article>
+    `);
+  }
+
+  if (typeInput == false) {
+    if ((buttonCount = 4)) {
+      $("body").append(`
+        <article class="item" data-key="article${formId}">
+          <h4>${question}</h4>
+          
+          <button
+          onclick="javasript:formButtonPressed(${formId},${buttonData[0]})"
+          class="btn btn-primary"
+          id="button0${formId}"
+          >
+          ${buttonLabel[0]}
+          </button>
+
+          <button
+          onclick="javasript:formButtonPressed(${formId},${buttonData[1]})"
+          class="btn btn-primary"
+          id="button1${formId}"
+          >
+          ${buttonLabel[1]}
+          </button>
+
+          <button
+          onclick="javasript:formButtonPressed(${formId},${buttonData[2]})"
+          class="btn btn-primary"
+          id="button2${formId}"
+          >
+          ${buttonLabel[2]}
+          </button>
+
+          <button
+          onclick="javasript:formButtonPressed(${formId},${buttonData[3]})"
+          class="btn btn-primary"
+          id="button3${formId}"
+          >
+          ${buttonLabel[3]}
+          </button>
+        </article>
+      `);
+    }
+  }
+}
+
+function formButtonPressed(formId, buttonData) {}
