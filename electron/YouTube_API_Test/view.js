@@ -1,5 +1,5 @@
-let $ = require("jquery");
-let fs = require("fs");
+const $ = require("jquery");
+const fs = require("fs");
 
 // data for the api request:
 var key = "AIzaSyDeXi9GABxJhqK8u9nj86NsayQJzMiPC_Q";
@@ -49,15 +49,26 @@ function goButtonPressed() {
       console.log(rawChannelData);
       sortedVideoData = sortChannelData(sortedVideoData, rawChannelData);
       console.log(sortedVideoData);
+
+      // show preview of video title and thumbnail
+      var videoTitleLabel = document.getElementById("videoTitleLabel");
+      videoTitleLabel.innerHTML = sortedVideoData.video.title;
+      var videoThumb = document.getElementById("videoThumb");
+      videoThumb.src = sortedVideoData.video.thumbURL;
     });
   });
 
   // enable export button
   exportButton = document.getElementById("exportButton");
   exportButton.disabled = false;
-  createFormButton = document.getElementById("createForm");
-  createFormButton.disabled = false;
+  // after loading data, disable go button
+  goButton = document.getElementById("submitVideoLink");
+  goButton.disabled = true;
+
+  createForm(sortedVideoData);
 }
+
+function reloadPage() {}
 
 function sortVideoData(data, ownId, date) {
   var month = pad2(Number(date.getMonth()) + 1);
@@ -73,7 +84,7 @@ function sortVideoData(data, ownId, date) {
     data.items[0].snippet.title
   );
   sortedData.ownId = ownId;
-  sortedData.recordingDate = day + "-" + month + "-" + year;
+  sortedData.recordingDate = day + "." + month + "." + year;
   sortedData.codingPerson = "FA";
 
   sortedData.video.title = data.items[0].snippet.title;
@@ -84,7 +95,10 @@ function sortVideoData(data, ownId, date) {
   sortedData.video.downvoteCount = data.items[0].statistics.dislikeCount;
   sortedData.video.commentsCount = data.items[0].statistics.commentCount;
   sortedData.video.viewCount = data.items[0].statistics.viewCount;
-
+  sortedData.video.thumbURL = data.items[0].snippet.thumbnails.medium.url;
+  sortedData.video.uploadDate = fullTimeToDate(
+    data.items[0].snippet.publishedAt
+  );
   sortedData.channel.name = data.items[0].snippet.channelTitle;
   sortedData.channel.id = data.items[0].snippet.channelId;
 
@@ -92,7 +106,9 @@ function sortVideoData(data, ownId, date) {
 }
 
 function sortChannelData(videoData, channelData) {
-  videoData.channel.publish = channelData.items[0].snippet.publishedAt;
+  videoData.channel.publish = fullTimeToDate(
+    channelData.items[0].snippet.publishedAt
+  );
   videoData.channel.subsCount = channelData.items[0].statistics.subscriberCount;
   videoData.channel.videoCount = channelData.items[0].statistics.videoCount;
 
@@ -155,6 +171,13 @@ function getFourLetters(channelName, videoTitle) {
 
 function pad2(number) {
   return (number < 10 ? "0" : "") + number;
+}
+
+function fullTimeToDate(fullTime) {
+  year = fullTime.substring(0, 4);
+  month = fullTime.substring(5, 7);
+  day = fullTime.substring(8, 10);
+  return day + "." + month + "." + year;
 }
 
 function writeDataExcelFile(sortedData, fileName) {
