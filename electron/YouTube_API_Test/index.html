@@ -41,74 +41,29 @@
     </div>
     <div>
       <button
-      onclick="javasript:goButtonPressed()"
-      class="btn btn-primary"
-      id="submitVideoLink"
+        onclick="javasript:goButtonPressed()"
+        class="btn btn-primary"
+        id="submitVideoLink"
       >
-      Go!
+        Go!
       </button>
 
       <button
-      onclick="javasript:writeDataExcelFile(sortedVideoData, sortedVideoData.ownId)"
-      class="btn btn-primary"
-      id="exportButton"
-      disabled
-      >   
-      export excel sheet
-      </button>
-
-      <button
-      onclick="javasript:createForm(sortedVideoData)"
-      class="btn btn-primary"
-      id="createForm"
-      disabled
+        onclick="javasript:writeDataExcelFile(sortedVideoData, sortedVideoData.ownId)"
+        class="btn btn-primary"
+        id="exportButton"
+        disabled
       >
-      Create Form      
+        export excel sheet
       </button>
-
-    </div>
-
       <div>
-        <label id="fourLetter"></label>
-      </div>
-      <div>
-        <label id="recordingDate"></label>
-      </div>
-      <div>
-        <label id="codingPerson"></label>
-      </div>
-      <div>
-        <label id="videoLinkLabel"></label>
-      </div>
-      <div>
-        <label id="videoTitle"></label>
-      </div>
-      <div>
-        <label id="ownIdLabel"></label>
-      </div>
-      <div>
-        <label id="videoLength"></label>
-      </div>
-      <div>
-        <label id="channelName"></label>
-      </div>
-      <div>
-        <label id="channelSubs"></label>
-      </div>
-
-      <div id="contact-list">
-        <table class="table-striped" id="contact-table">
-          <tr>
-            <th class="col-xs-2">S. No.</th>
-            <th class="col-xs-4">Name</th>
-            <th class="col-xs-6">Email</th>
-          </tr>
-        </table>
+        <label id="videoTitleLabel"></label>
+        <img src="" id="videoThumb" />
       </div>
 
       <script src="./view.js"></script>
       <script src="./questionsData.js"></script>
       <script src="./buttonHTMLforAppend.js"></script>
-          </div>
+    </div>
   </body>
 </html>
