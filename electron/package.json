@@ -1,0 +1,26 @@
+{
+  "name": "YouTube Data",
+  "version": "0.1.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "paul schulze",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "dialog": "^0.3.1",
+    "electron-dialog": "^2.0.0",
+    "exceljs": "^4.0.1",
+    "fs": "^0.0.1",
+    "jquery": "^3.5.1",
+    "react-app-polyfill": "^1.0.6",
+    "regenerator-runtime": "^0.13.5"
+  },
+  "devDependencies": {
+    "electron": "^9.0.4",
+    "electron-packager": "^14.2.1",
+    "jest": "^26.0.1"
+  }
+}
