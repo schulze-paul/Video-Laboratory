@@ -479,8 +479,10 @@ function idFromLink(videoLink) {
 
 function getFourLetters(channelName, videoTitle) {
   // takes the first four letters of the channel name and the video title
-  fourLower = channelName.substr(0, 4) + videoTitle.substr(0, 4);
-  fourUpper = fourLower.toUpperCase();
+  channelNameNoSpaces = channelName.split(" ").join("+");
+  videoTitleNoSpaces = videoTitle.split(" ").join("+");
+  fourLower = channelNameNoSpaces.substr(0, 4) + videoTitle.substr(0, 4);
+  fourUpper = fourLowerNoSpaces.toUpperCase();
   return fourUpper;
 }
 
