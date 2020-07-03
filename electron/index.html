@@ -20,7 +20,7 @@
       <input
         type="link"
         name="videoLinkInput"
-        value="https://www.youtube.com/watch?v=wR2tOLShFmY"
+        value=""
         id="videoLinkInput"
         placeholder="Video Link"
         class="form-control"
@@ -54,9 +54,15 @@
           <label id="videoTitleLabel" class="videoTitleLabel"></label>
         </div>
         <div id="pageButtonContainer" class="pageButtonContainer">
-          <button id="videoPage">Video Page</button>
-          <button id="videoPage">Channel Page</button>
-          <button id="videoPage">Search Page</button>
+          <button onclick="javascript:videoPageButton()" id="videoPage">
+            Video Page
+          </button>
+          <button onclick="javascript:channelPageButton()" id="videoPage">
+            Channel Page
+          </button>
+          <button onclick="javascript:searchPageButton()" id="videoPage">
+            Search Page
+          </button>
         </div>
       </div>
 

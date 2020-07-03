@@ -1,5 +1,6 @@
 const $ = require("jquery");
 const fs = require("fs");
+const { shell } = require("electron");
 
 // data for the api request:
 var key = "AIzaSyDeXi9GABxJhqK8u9nj86NsayQJzMiPC_Q";
@@ -12,6 +13,8 @@ var channelPart = "snippet, statistics";
 var sortedVideoData = {};
 // global variable with the answers to the questions
 var questionAnswer = [];
+// global variable linking the buttons and answers of question 36
+var button36answers = [];
 
 // FUNCTIONS THAT PERFORM A LARGE TASK, LOADING DATA, WRITING DATA...
 function goButtonPressed(
@@ -118,22 +121,79 @@ function createForm(sortedData) {
 }
 
 function formButtonPressed(formId, buttonData, buttonNo) {
-  // set the data to the answer that was clicked
-  questionAnswer[formId] = buttonData;
-
-  buttonCount = questionData[formId].buttonData.length;
-  // set all buttons to inactive and then set the button that was clicket to active
-  for (var i = 0; i < buttonCount; i++) {
-    buttons = document.getElementById((id = "button" + i + formId));
-    buttons.className = "buttonNotClicked";
-  }
   button = document.getElementById((id = "button" + buttonNo + formId));
-  button.className = "buttonClicked";
+  buttonCount = questionData[formId].buttonData.length;
+
+  //check if buttin was pressed or not
+  if (
+    button.className == "buttonOpen" ||
+    button.className == "buttonNotClicked"
+  ) {
+    //no button of this question was clicked
+    if (formId == 36) {
+      //check if its the multiple answer question 36
+      if (
+        typeof questionAnswer[36] === "undefined" ||
+        questionAnswer[36] == ""
+      ) {
+        questionAnswer[36] = buttonData;
+        button.className = "buttonClicked";
+      } else if (
+        typeof questionAnswer[37] === "undefined" ||
+        questionAnswer[37] == ""
+      ) {
+        questionAnswer[37] = buttonData;
+        button.className = "buttonClicked";
+      } else if (
+        typeof questionAnswer[38] === "undefined" ||
+        questionAnswer[38] == ""
+      ) {
+        questionAnswer[38] = buttonData;
+        button.className = "buttonClicked";
+      } else {
+        //three buttons are active, click not valid
+      }
+    } else {
+      // set the data to the answer that was clicked
+      questionAnswer[formId] = buttonData;
+
+      // set all buttons to inactive and then set the button that was clicket to active
+      for (var i = 0; i < buttonCount; i++) {
+        buttons = document.getElementById((id = "button" + i + formId));
+        buttons.className = "buttonNotClicked";
+      }
+      button.className = "buttonClicked";
+    }
+  } else if (button.className == "buttonClicked") {
+    if (formId == 36) {
+      button.className = "buttonNotClicked";
+      if (questionAnswer[36] == buttonData) {
+        questionAnswer[36] = "";
+      }
+      if (questionAnswer[37] == buttonData) {
+        questionAnswer[37] = "";
+      }
+      if (questionAnswer[38] == buttonData) {
+        questionAnswer[38] = "";
+      }
+    } else {
+      //reset the data in the field
+      questionAnswer[formId] = "";
+      // set all buttons to inactive and then set the button that was clicket to active
+      for (var i = 0; i < buttonCount; i++) {
+        buttons = document.getElementById((id = "button" + i + formId));
+        buttons.className = "buttonOpen";
+      }
+    }
+  }
+  console.log(questionAnswer);
 }
 
 function setInputData() {
+  // get the id set by the user
   sortedData.ownId = $("#ownIdInput").val();
 
+  // get all the data from the textinput field
   for (var formId = 0; formId < 70; formId++) {
     try {
       if (questionData[formId].typeInput == true) {
@@ -148,6 +208,33 @@ function setInputData() {
       //data is not an input field
     }
   }
+  // if less than three buttons for question 36 are pressed, add the 66: not apparent in the empty fields
+  if (typeof questionAnswer[36] === "undefined" || questionAnswer[36] == "") {
+    questionAnswer[36] = 66;
+  }
+  if (typeof questionAnswer[37] === "undefined" || questionAnswer[37] == "") {
+    questionAnswer[37] = 66;
+  }
+  if (typeof questionAnswer[38] === "undefined" || questionAnswer[38] == "") {
+    questionAnswer[38] = 66;
+  }
+}
+
+function videoPageButton() {
+  shell.openExternal(sortedVideoData.video.link);
+}
+
+function channelPageButton() {
+  channelLink = "https://www.youtube.com/channel/" + sortedVideoData.channel.id;
+  shell.openExternal(channelLink);
+}
+
+function searchPageButton() {
+  searchTerm = sortedVideoData.video.title;
+  searchLink =
+    "https://www.youtube.com/results?search_query=" +
+    searchTerm.split(" ").join("+");
+  shell.openExternal(searchLink);
 }
 
 function excelFileButton(sortedData, questionAnswer) {

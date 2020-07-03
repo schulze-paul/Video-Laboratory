@@ -167,6 +167,26 @@
     buttonLabel: ["One person", "Team production", "Not apparent"],
     buttonData: [1, 2, 66],
   }),
+  (questionData[36] = {
+    formId: 36,
+    question:
+      "Which element appears in the video description before the button (see more)",
+    typeInput: false,
+    buttonLabel: [
+      "Linking",
+      "Video content or topic introduction",
+      "Channel information",
+      "Credits",
+      "Transcription to the video",
+      "Information to the  video context/to the development of the video",
+      "Other",
+      "Sources",
+      "Call to action",
+      "Overview/Summary",
+      "Embedding in playlist (it can also be a written link list)",
+    ],
+    buttonData: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+  }),
   (questionData[39] = {
     formId: 39,
     question: "Are there links/URLs in the video description?",
