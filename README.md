@@ -19,5 +19,3 @@ Installation requires:
 - jquery: 3.5.1
 - react-app-polyfill: 1.0.6
 - regenerator-runtime: 0.13.5
-
-electron-packager
