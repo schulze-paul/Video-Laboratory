@@ -94,14 +94,17 @@ function goButtonPressed(
 }
 
 function createForm(sortedData) {
-  for (var i = 0; i < 70; i++) {
+  for (var index = 0; index < 70; index++) {
     try {
-      formId = questionData[i].formId;
-      question = questionData[i].question;
-      typeInput = questionData[i].typeInput;
+      // try if the the data at index is part of the form
+      formId = questionData[index].formId;
+      question = questionData[index].question;
+      typingInput = questionData[index].typingInput;
 
-      if (typeInput == true) {
-        type = questionData[i].type;
+      // if this form items requires a
+      if (typingInput == true) {
+        // type of the input (link, ...)
+        type = questionData[index].type;
         $("#formSection").append(`
           <article class="item" data-key="${formId}">
             <h4>${question}</h4>
@@ -117,8 +120,9 @@ function createForm(sortedData) {
       }
 
       if (typeInput == false) {
-        buttonLabel = questionData[i].buttonLabel;
-        buttonData = questionData[i].buttonData;
+        // create a button formitem
+        buttonLabel = questionData[index].buttonLabel;
+        buttonData = questionData[index].buttonData;
         $("#formSection").append(
           buttonArticleFun(formId, question, buttonData, buttonLabel)
         );
@@ -233,15 +237,18 @@ function setInputData() {
 }
 
 function videoPageButton() {
+  // open the video page
   shell.openExternal(sortedVideoData.video.link);
 }
 
 function channelPageButton() {
+  // open the channel page
   channelLink = "https://www.youtube.com/channel/" + sortedVideoData.channel.id;
   shell.openExternal(channelLink);
 }
 
 function searchPageButton() {
+  // open the search page
   searchTerm = sortedVideoData.video.title;
   searchLink =
     "https://www.youtube.com/results?search_query=" +
@@ -250,8 +257,7 @@ function searchPageButton() {
 }
 
 function excelFileButton(sortedData, questionAnswer) {
-  // set the ownId again
-
+  // set all the inputs from the form into  the questionAnswer object
   setInputData();
 
   // create excel file
