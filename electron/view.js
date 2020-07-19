@@ -2,6 +2,15 @@ const $ = require("jquery");
 const fs = require("fs");
 const { shell } = require("electron");
 
+// Function to keep the video title, thumbnail, buttons at top
+var $window = $(window),
+  $stickyEl = $("#videoPreview"),
+  elTop = $stickyEl.offset().top;
+
+$window.scroll(function () {
+  $stickyEl.toggleClass("sticky", $window.scrollTop() > elTop);
+});
+
 // data for the api request:
 var key = "AIzaSyDeXi9GABxJhqK8u9nj86NsayQJzMiPC_Q";
 var apiVideoURL = "https://www.googleapis.com/youtube/v3/videos";
@@ -137,19 +146,19 @@ function formButtonPressed(formId, buttonData, buttonNo) {
         questionAnswer[36] == ""
       ) {
         questionAnswer[36] = buttonData;
-        button.className = "buttonClicked";
+        button.className = "buttonMultipleClicked";
       } else if (
         typeof questionAnswer[37] === "undefined" ||
         questionAnswer[37] == ""
       ) {
         questionAnswer[37] = buttonData;
-        button.className = "buttonClicked";
+        button.className = "buttonMultipleClicked";
       } else if (
         typeof questionAnswer[38] === "undefined" ||
         questionAnswer[38] == ""
       ) {
         questionAnswer[38] = buttonData;
-        button.className = "buttonClicked";
+        button.className = "buttonMultipleClicked";
       } else {
         //three buttons are active, click not valid
       }
@@ -164,7 +173,10 @@ function formButtonPressed(formId, buttonData, buttonNo) {
       }
       button.className = "buttonClicked";
     }
-  } else if (button.className == "buttonClicked") {
+  } else if (
+    button.className == "buttonClicked" ||
+    button.className == "buttonMultipleClicked"
+  ) {
     if (formId == 36) {
       button.className = "buttonNotClicked";
       if (questionAnswer[36] == buttonData) {
@@ -481,8 +493,9 @@ function getFourLetters(channelName, videoTitle) {
   // takes the first four letters of the channel name and the video title
   channelNameNoSpaces = channelName.split(" ").join("+");
   videoTitleNoSpaces = videoTitle.split(" ").join("+");
-  fourLower = channelNameNoSpaces.substr(0, 4) + videoTitle.substr(0, 4);
-  fourUpper = fourLowerNoSpaces.toUpperCase();
+  fourLower =
+    channelNameNoSpaces.substr(0, 4) + videoTitleNoSpaces.substr(0, 4);
+  fourUpper = fourLower.toUpperCase();
   return fourUpper;
 }
 
