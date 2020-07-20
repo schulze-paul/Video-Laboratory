@@ -12,7 +12,7 @@ $window.scroll(function () {
 });
 
 // data for the api request:
-var key = "AIzaSyDeXi9GABxJhqK8u9nj86NsayQJzMiPC_Q";
+var apiKey = "";
 var apiVideoURL = "https://www.googleapis.com/youtube/v3/videos";
 var videoPart = "snippet, statistics, contentDetails, recordingDetails";
 var apiChannelURL = "https://www.googleapis.com/youtube/v3/channels";
