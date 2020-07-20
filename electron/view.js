@@ -27,7 +27,7 @@ var button36answers = [];
 
 // FUNCTIONS THAT PERFORM A LARGE TASK, LOADING DATA, WRITING DATA...
 function goButtonPressed(
-  key,
+  apiKey,
   apiVideoURL,
   videoPart,
   apiChannelURL,
@@ -44,7 +44,7 @@ function goButtonPressed(
   // options for the get request to the youtube api
   var videoOptions = {
     part: videoPart,
-    key: key,
+    key: apiKey,
     id: videoId,
   };
 
@@ -59,7 +59,7 @@ function goButtonPressed(
     // set up channel options for GET request
     var channelOptions = {
       part: channelPart,
-      key: key,
+      key: apiKey,
       id: sortedVideoData.channel.id,
     };
 
