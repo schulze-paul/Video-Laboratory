@@ -1,6 +1,15 @@
-# Video Categorization Application
-
+# Video Analysis App
 ![GUI overview](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_overview.PNG?raw=true)
+
+Overview:
+1. Motivation
+2. Functionality
+3. Development and key design decisions
+4. Installation
+
+
+
+
 
 ## 1. Motivation
 
@@ -144,7 +153,7 @@ I created a python script that dynamically creates a JavaScript text file with t
         buttonData: [77, 1, 2, 3, 4, 66],
     }),
     
-# Installation
+# 4. Installation
 
 Installation requires:
 
