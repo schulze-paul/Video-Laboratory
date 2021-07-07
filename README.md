@@ -30,11 +30,10 @@ Especially the first problem motivated me to start the project. The second probl
 <p>
 	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/video_data.PNG?" alt="preview video data" title="preview video data" width="250"/>
 </p>
+
 Some data that is needed is readily available through the YouTube API. This includes the following data:
-
-Video data includes: link, title, duration, upload date, view count, upvote count, downvote count, comments count
-
-Channel data includes, link, name, join date, video count, subscribers count
+- Video data includes: link, title, duration, upload date, view count, upvote count, downvote count, comments count
+- Channel data includes, link, name, join date, video count, subscribers count
 
 Using the link to a video as starting point, data about the video is collected through the YouTube API.
 With the channel link collected from the video data, the needed channel data is retrieved from the YouTube API.
@@ -42,7 +41,7 @@ All this data is cached while the user fills out the form.
 
 ### Manual data entry
 
-Some required data is not directly available through the YouTube API or requires interpretation of for example the video content or comments. This Data is collected manually through a form where the user can click on the answer to a multiple choice question or enter text in a text field.
+Some required data is not directly available through the YouTube API or requires interpretation of for example the video content or comments. This data is collected manually through a form where the user can click on the answer to a multiple choice question or enter text in a text field.
 Questions that need to be manually filled out include:
 
 - Are there any other eye-catching characteristics (e.g. colors) of the thumbnail?
