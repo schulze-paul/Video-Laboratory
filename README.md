@@ -4,7 +4,7 @@
 
 ---
 
-The Video Analysis App is an automated video classification tool that helps video research coders reduce errors while coding video data and improve their coding speed.
+The Video Analysis App is an automated video classification tool that helps video research coders reduce errors while coding video data and improve their coding speed. It is written in `JavaScript` and `HTML`/`CSS` using the `Electron` framework
 
 <p align="center">
 	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_overview.PNG" alt="GUI overview" title="GUI overview" width="450"/>
@@ -23,7 +23,7 @@ This had to be done for hundreds of videos.
 This process had two problems that could easily be fixed with software:
 
 1. Manually copying the data from the website is very inefficient.
-2. Writing a code to the multiple choice question is very intuitive and sometimes required a lot of scrolling to get from the excel cell with the question and the answer codes to the cell where the answer needs to be written.
+2. Writing a code to the multiple choice question is very unintuitive and sometimes requires a lot of scrolling to get from the excel cell with the question and the answer codes to the cell where the answer needs to be written.
 
 Especially the first problem motivated me to start the project. The second problem was addressed later for completeness.
 
@@ -75,21 +75,21 @@ An excel sheet is created and the data is written into the excel sheet.
 Starting out with this project, the first decision I had to make was what programming language / platform to use. I had some general requirements to the project that I considered key:
 I wanted
 
-- an intuitive `GUI`
+- an intuitive GUI
 - a fast development process
 - cross-platform usability
 
 At the time I had strong experience in `MATLAB`, `Python` and `Java` and knew little about `JavaScript` and `HTML`/`CSS`.
 
-I had a lot of `MATLAB` experience and strongly considered using it for this project. I was very familiar with the syntax and had already developed a `GUIs` in `MATLAB`. The development process overall probably would have gone a lot smoother with using `MATLAB`, especially working with the `YouTube API`. However I decided that it was not the optimal solution to the problem.
+I had a lot of `MATLAB` experience and strongly considered using it for this project. I was very familiar with the syntax and had already developed a GUIs in `MATLAB`. The development process overall probably would have gone a lot smoother with using `MATLAB`, especially working with the `YouTube API`. However I decided that it was not the optimal solution to the problem.
 
-`Java` was another strong candidate as I already had experience in developing `GUIs` in `Java`, but in my research I found that is was mostly considered outdated and not the best candidate for the project.
+`Java` was another strong candidate as I already had experience in developing GUIs in `Java`, but in my research I found that is was mostly considered outdated and not the best candidate for the project.
 
 From my research I found that some of the best platforms for a good GUI are `Electron` and `C++`. `C++` is favored for lightweight applications where performance is the highest priority. However the development time for `C++` would have been much higher than electron. This is why I decided against `C++`.
 
-I had no experience in developing `GUIs` in `Python` and after looking into it I quickly decided against it. As with `MATLAB`, developing the data handling would have been much faster in `Python`, but I was not satisfied with the `GUI` development options.
+I had no experience in developing GUIs in `Python` and after looking into it I quickly decided against it. As with `MATLAB`, developing the data handling would have been much faster in `Python`, but I was not satisfied with the GUI development options.
 
-After a lot of research and trials in `MATLAB`, `Python` and `Electron`, I decided to use the `Electron` framework because it promised a good `GUI` with the most control. Also `JavaScript` and `HTML`/`CSS` are some of the most important front end platforms generally and with the syntax similarity of `JavaScript` to `Java`, where I had experience, I decided to work with `Electron`.
+After a lot of research and trials in `MATLAB`, `Python` and `Electron`, I decided to use the `Electron` framework because it promised a good GUI with the most control. Also `JavaScript` and `HTML`/`CSS` are some of the most important front end platforms generally and with the syntax similarity of `JavaScript` to `Java`, where I had experience, I decided to work with `Electron`.
 
 ### Creating the GUI in HTML/CSS
 
@@ -97,7 +97,7 @@ After a lot of research and trials in `MATLAB`, `Python` and `Electron`, I decid
 	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_detail.PNG" alt="GUI detail" title="GUI detail" width="550"/>
 </p>
 
-The main objective of the `GUI` was to reduce user errors and the time of completing the task for one video. This was achieved by:
+The main objective of the GUI was to reduce user errors and the time of completing the task for one video. This was achieved by:
 
 - showing as much information as possible on the screen
 - showing the questions and answers in clear, bold letters
@@ -107,7 +107,7 @@ The main objective of the `GUI` was to reduce user errors and the time of comple
 
 User errors might include: putting the answer to a question in the wrong excel cell, confusing the code of two answers, not filling out every answer and writing durations or dates in the wrong format. All of these errors are made impossible with using the application.
 
-Making the whole process of answering each question more streamlined does not only reduce errors, but allows the user to spend their time thinking about the question and not about answer codes and excel sheets.
+Making the whole process of answering each question more streamlined does not only reduce errors, but allows the user to spend their time thinking about the question and not about answer codes and excel cells.
 
 ### Getting the Data from YouTube
 
