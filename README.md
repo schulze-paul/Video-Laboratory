@@ -126,6 +126,21 @@ The application has to create the form for the user to fill out and select multi
 
 I created a python script that dynamically creates a JavaScript text file with the object list, because manually writing the list in JavaScript would have been a very long and repetitive process.
 
+    (questionData[12] = {
+        formId: 12,
+        question: "Is a person visible on the thumbnail (preview picture)?",
+        typingInput: false,
+        buttonLabel: [
+            "No",
+            "Yes, the presenter or the presenters",
+            "Yes, a person the video relates to",
+            "Yes, different persons which the video relates",
+            "Reference unclear",
+            "Not apparent",
+        ],
+        buttonData: [77, 1, 2, 3, 4, 66],
+    }),
+    
 # Installation
 
 Installation requires:
