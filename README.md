@@ -1,8 +1,8 @@
 # Video Categorization Application
 
-## 1. Motivation
-
 ![GUI overview](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_overview.PNG?raw=true)
+
+## 1. Motivation
 
 This Application was needed in the context of a research project where videos and channels on YouTube are analysed.
 It was part of the data collection process.
