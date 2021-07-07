@@ -12,7 +12,6 @@ $window.scroll(function () {
 });
 
 // data for the api request:
-var apiKey = "";
 var apiVideoURL = "https://www.googleapis.com/youtube/v3/videos";
 var videoPart = "snippet, statistics, contentDetails, recordingDetails";
 var apiChannelURL = "https://www.googleapis.com/youtube/v3/channels";
@@ -119,7 +118,7 @@ function createForm(sortedData) {
             `);
       }
 
-      if (typeInput == false) {
+      if (typingInput == false) {
         // create a button formitem
         buttonLabel = questionData[index].buttonLabel;
         buttonData = questionData[index].buttonData;
@@ -137,7 +136,7 @@ function formButtonPressed(formId, buttonData, buttonNo) {
   button = document.getElementById((id = "button" + buttonNo + formId));
   buttonCount = questionData[formId].buttonData.length;
 
-  //check if buttin was pressed or not
+  //check if button was pressed or not
   if (
     button.className == "buttonOpen" ||
     button.className == "buttonNotClicked"
@@ -491,7 +490,8 @@ function sortChannelData(videoData, channelData) {
 }
 
 function idFromLink(videoLink) {
-  VID_REGEX = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  VID_REGEX =
+    /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
   return videoLink.match(VID_REGEX)[1];
 }
 
