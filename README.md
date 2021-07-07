@@ -81,6 +81,8 @@ After a lot of research and trials in MATLAB and Python, I decided to use the El
 
 ### Creating the GUI in HTML/CSS
 
+![GUI detail](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_detail.PNG?raw=true)
+
 The main objective of the GUI was to reduce user errors and the time of completing the task for one video. This was achieved by:
 
 - showing as much information as possible on the screen
