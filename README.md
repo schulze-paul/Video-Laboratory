@@ -1,5 +1,7 @@
 # Video Analysis App
-[link](#1-motivation)
+[Motivation](#1-motivation) | [Functionality](#2-functionality) | [Development and Key Design Decisions](#3-development-and-key-design-decisions) | [Installation](#4-installation)
+
+
 
 The Video Analysis App is an automated video classification tool that helps video research coders reduce errors while coding video data and improve their coding speed.
 
@@ -26,7 +28,7 @@ Especially the first problem motivated me to start the project. The second probl
 
 ## 2. Functionality
 
-### Data retrieval from the YouTube API
+### Data Retrieval from the YouTube API
 
 <p>
 	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/video_data.PNG?" alt="preview video data" title="preview video data" width="250"/>
@@ -40,7 +42,7 @@ Using the link to a video as starting point, data about the video is collected t
 With the channel link collected from the video data, the needed channel data is retrieved from the YouTube API.
 All this data is cached while the user fills out the form.
 
-### Manual data entry
+### Manual Data Entry
 
 Some required data is not directly available through the YouTube API or requires interpretation of for example the video content or comments. This data is collected manually through a form where the user can click on the answer to a multiple choice question or enter text in a text field.
 Questions that need to be manually filled out include:
@@ -55,13 +57,13 @@ The answers are saved along the data from the YouTube API.
 	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/form_multiple_choice.PNG" alt="preview form" title="preview form" width="550"/>
 </p>
 
-### Data transformation and export
+### Data Transformation and Export
 
 At this point all the required data is available. The next step is to transform the raw data into the required format needed in the excel sheet. For example the YouTube API returns the upload time of a video as a datetime object, whereas in the excel we just need the date in the format DD.MM.YYYY. After transformation, each data point gets an excel cell assigned.
 
 An excel sheet is created and the data is written into the excel sheet.
 
-## 3. Development and key design decisions.
+## 3. Development and Key Design Decisions
 
 ### Why Electron?
 
@@ -104,7 +106,7 @@ User errors might include: putting the answer to a question in the wrong excel c
 
 Making the whole process of answering each question more streamlined does not only reduce errors, but allows the user to spend their time thinking about the question and not about answer codes and excel sheets.
 
-### Getting the data from YouTube
+### Getting the Data from YouTube
 
 My first Intuition for getting the video data was to develop a web crawler that would download the HTML of the video page and channel page where most of the needed information would have been available. I even would have been able to collect some data that was not available through the YouTube API, such as social media links. However this process would have been a lot messier and after some trial with the YouTube API I decided against a web crawler.
 
@@ -132,7 +134,7 @@ The first big hurdle was getting to a working prototype. I found the answer to m
 
 Working in JavaScript was new and the asynchronous and nested functionality of requesting the video data JSON, then waiting for the reply, then based on the reply requesting the channel data JSON and again waiting for the reply was very confusing at first. I found that working with the excel sheet was unintuitive, and I was not happy with the way I implemented this functionality in the end. However it worked fine, so I left it as it was. This is where my lack of experience in JavaScript hurt the development process.
 
-### Converting the questions and answers in Python
+### Converting the Questions and Answers in Python
 
 The application has to create the form for the user to fill out and select multiple choice options. At start the application dynamically loads a list of question objects which contain all the needed information to create the section of the form for one question block, and then loops over all question blocks
 
