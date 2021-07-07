@@ -1,4 +1,5 @@
 # Video Analysis App
+[link](#1-motivation)
 
 The Video Analysis App is an automated video classification tool that helps video research coders reduce errors while coding video data and improve their coding speed.
 
@@ -137,6 +138,7 @@ The application has to create the form for the user to fill out and select multi
 
 I created a python script that dynamically creates a JavaScript text file with the object list, because manually writing the list in JavaScript would have been a very long and repetitive process.
 
+```javascript
     (questionData[12] = {
         formId: 12,
         question: "Is a person visible on the thumbnail (preview picture)?",
@@ -151,6 +153,7 @@ I created a python script that dynamically creates a JavaScript text file with t
         ],
         buttonData: [77, 1, 2, 3, 4, 66],
     }),
+```
     
 # 4. Installation
 
