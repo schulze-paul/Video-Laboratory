@@ -98,23 +98,23 @@ My first Intuition for getting the video data was to develop a web crawler that 
 
 The first big hurdle was getting to a working prototype. I found the answer to most of my questions in the documentation of the YouTube API and of Electron. But at this point I was new in working with an API, with Electron, with JavaScript and with HTML/CSS. So I focused first on getting the data that I needed from the YouTube API with Python, and then implemented the same functionality in JavaScript.
 
- Video:
- commentsCount: "7860972"
- downvoteCount: "319701"
- duration: "00:03:03"
- id: "WMweEpGlu_U"
- link: "https://www.youtube.com/watch?v=WMweEpGlu_U"
- thumb URL: "https://i.ytimg.com/vi/WMweEpGlu_U/mqdefault.jpg"
- title: "BTS (방탄소년단) 'Butter' Official MV"
- uploadDate: "21.05.2021"
- upvoteCount: "18171920"
- viewCount: "4280769
- channel:
- id: "UC3IZKseVpdzPSBaWxBxundA"
- name: "HYBE LABELS"
- publish: "04.06.2008"
- subsCount: "58200000"
- viscount: "630"00"
+    Video:
+        commentsCount: "7860972"
+        downvoteCount: "319701"
+        duration: "00:03:03"
+        id: "WMweEpGlu_U"
+        link: "https://www.youtube.com/watch?v=WMweEpGlu_U"
+        thumb URL: "https://i.ytimg.com/vi/WMweEpGlu_U/mqdefault.jpg"
+        title: "BTS (방탄소년단) 'Butter' Official MV"
+        uploadDate: "21.05.2021"
+        upvoteCount: "18171920"
+        viewCount: "4280769
+    channel:
+        id: "UC3IZKseVpdzPSBaWxBxundA"
+        name: "HYBE LABELS"
+        publish: "04.06.2008"
+        subsCount: "58200000"
+        viscount: "630"00"
 
 ### Working in JavaScript
 
