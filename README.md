@@ -88,8 +88,9 @@ I had no experience in developing GUIs in Python and after looking into it I qui
 After a lot of research and trials in MATLAB and Python, I decided to use the Electron framework because it promised a good GUI with the most control. Also JavaScript and HTML/CSS are some of the most important front end platforms generally and with the syntax similarity of JavaScript to Java, where I had experience, I decided to work with Electron.
 
 ### Creating the GUI in HTML/CSS
-
-![GUI detail](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_detail.PNG?raw=true)
+<p align="center">
+	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_detail.PNG" alt="GUI detail" title="GUI detail" width="550"/>
+</p>
 
 The main objective of the GUI was to reduce user errors and the time of completing the task for one video. This was achieved by:
 
@@ -97,7 +98,7 @@ The main objective of the GUI was to reduce user errors and the time of completi
 - showing the questions and answers in clear, bold letters
 - showing clearly which answers are selected
 - showing the banner with base video data on always on top
-- giving quick access to the video page, channel page and a video preview page
+- giving quick access to the video web page, channel web page and a video search web page
 
 User errors might include: putting the answer to a question in the wrong excel cell, confusing the code of two answers, not filling out every answer, writing durations or dates in the wrong format. All of these errors are made impossible with using the application.
 
@@ -109,7 +110,7 @@ My first Intuition for getting the video data was to develop a web crawler that 
 
 The first big hurdle was getting to a working prototype. I found the answer to most of my questions in the documentation of the YouTube API and of Electron. But at this point I was new in working with an API, with Electron, with JavaScript and with HTML/CSS. So I focused first on getting the data that I needed from the YouTube API with Python, and then implemented the same functionality in JavaScript.
 
-    Video:
+    video:
         commentsCount: "7860972"
         downvoteCount: "319701"
         duration: "00:03:03"
