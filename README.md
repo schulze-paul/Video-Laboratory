@@ -50,7 +50,9 @@ Some required data is not directly available through the `YouTube API` or requir
 Questions that need to be manually filled out include:
 
 > Are there any other eye-catching characteristics (e.g. colors) of the thumbnail?
+>
 > How often are videos uploaded by the channel?
+>
 > Is there negative feedback to the producers in the comments?
 
 The answers are saved along the data from the `YouTube API`.
