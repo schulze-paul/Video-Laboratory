@@ -36,9 +36,9 @@ Especially the first problem motivated me to start the project. The second probl
 
 Some data that is needed is readily available through the `YouTube API`. This includes the following data:
 - Video data includes: `link`, `title`, `duration`, `upload_date`, `view_count`, `upvote_count`, `downvote_count`, `comments_count`
-- Channel data includes, `link`, `name`, `join_date`, `video_count`, `subscribers_count`
+- Channel data includes: `link`, `name`, `join_date`, `video_count`, `subscribers_count`
 
-Using the link to a video as starting point, data about the video is collected through the `YouTube API`.
+Using the `link` to a video as starting point, data about the video is collected through the `YouTube API`.
 With the channel link collected from the video data, the needed channel data is retrieved from the `YouTube API`.
 All this data is cached while the user fills out the form.
 
@@ -163,7 +163,7 @@ I created a `Python` script that dynamically creates a `JavaScript` text file wi
 
 Installation requires:
 
-"""
+```
 electron: 9.0.4
 electron-packager: 14.2.1
 jest: 26.0.1
@@ -175,4 +175,4 @@ fs: 0.0.1
 jquery: 3.5.1
 react-app-polyfill: 1.0.6
 regenerator-runtime: 0.13.5
-"""
+```
