@@ -5,12 +5,11 @@
 ## 1. Motivation
 
 This Application was needed in the context of a research project where videos and channels on YouTube are analysed.
-It was part of the data collection process.
+It was used for data collection.
 The data collection process that was used before consisted of either manually copying data from the website into an excel sheet or entering a number in the excel sheet referring to the answer to a multiple choice question.
 This had to be done for hundreds of videos.
 
-![Old data collection process](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/old_data_collection_process.PNG
-?raw=true)
+![Old data collection process](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/old_data_collection_process.PNG?raw=true)
 
 This process had two problems that could easily be fixed with software:
 
@@ -24,6 +23,7 @@ Especially the first problem motivated me to start the project. The second probl
 ### Data retrieval from the YouTube API
 
 ![preview video data](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/video_data.PNG?raw=true)
+
 Some of the data that is needed is readily available through the YouTube API. This includes the following data:
 
 About the video
@@ -64,13 +64,15 @@ The answers are saved along the data from the YouTube API.
 
 ### Data transformation and export
 
-At this point all the requiered data is available. The next step is to transform the raw data into the required format needed in the excel sheet. For example the YouTube API returns the upload time of a video as a datatime object, whereas in the excel we just need the date in the format DD.MM.YYYY. After transformation, each datapoint gets an excel cell assigned.
+At this point all the required data is available. The next step is to transform the raw data into the required format needed in the excel sheet. For example the YouTube API returns the upload time of a video as a datatime object, whereas in the excel we just need the date in the format DD.MM.YYYY. After transformation, each datapoint gets an excel cell assigned.
 
 An excel sheet is created and the data is written into the excel sheet.
 
 ## 3. Development and key design decisions
 
 ### Why electron?
+
+<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/384px-Electron_Software_Framework_Logo.svg.png" alt="electron" width="125"/>
 
 Starting out with this project, the first decision I had to make was what programming language / platform to use. I had some general requirements to the project that I considered key:
 I wanted
@@ -96,6 +98,24 @@ After a lot of research and trials in MATLAB and Python, I decided to use the El
 My first Intuition for getting the video data was to develop a web crawler that would download the HTML of the video page and channel page where most of the needed information would have been available. I even would have been able to collect some data that was not available through the YouTube API, such as social media links. However this process would have been a lot messier and after some trial with the YouTube API I decided against a web crawler.
 
 The first big hurdle was getting to a working prototype. I found the answer to most of my questions in the documentation of the YouTube API and of Electron. But at this point I was new in working with an API, with Electron, with JavaScript and with HTML/CSS. So I focussed first on getting the data that I needed from the Youtube API with Python, and then implemented the same functionality in JavaScript.
+
+    video:
+      commentsCount: "7860972"
+      downvoteCount: "319701"
+      duration: "00:03:03"
+      id: "WMweEpGlu_U"
+      link: "https://www.youtube.com/watch?v=WMweEpGlu_U"
+      thumbURL: "https://i.ytimg.com/vi/WMweEpGlu_U/mqdefault.jpg"
+      title: "BTS (방탄소년단) 'Butter' Official MV"
+      uploadDate: "21.05.2021"
+      upvoteCount: "18171920"
+      viewCount: "4280769
+    channel:
+        id: "UC3IZKseVpdzPSBaWxBxundA"
+        name: "HYBE LABELS"
+        publish: "04.06.2008"
+        subsCount: "58200000"
+        videoCount: "630"00"
 
 ### Working in JavaScript
 
