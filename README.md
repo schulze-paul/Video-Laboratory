@@ -24,26 +24,11 @@ Especially the first problem motivated me to start the project. The second probl
 ### Data retrieval from the YouTube API
 
 ![preview video data](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/video_data.PNG?raw=true)
-Some of the data that is needed is readily available through the YouTube API. This includes the following data:
+Some of the data that is needed is readily available through the YouTube API.
 
-About the video
+Video data includes: link, title, duration, upload date, view count, upvote count, downvote count, comments count
 
-- link
-- title
-- duration
-- upload date
-- view count
-- upvote count
-- downvote count
-- comments count
-
-About the channel
-
-- link
-- name
-- join date
-- video count
-- subscribers count
+Channel data includes, link, name, join date, video count, subscribers count
 
 Using the link to a video as starting point, data about the video is collected through the YouTube API.
 With the channel link collected from the video data, the needed channel data is retrieved from the Youtube API.
@@ -91,6 +76,20 @@ I had no experience in developing GUIs in Python and after looking into it I qui
 
 After a lot of research and trials in MATLAB and Python, I decided to use the Electron framework because it promised a good GUI with the most control. Also JavaScript and HTML/CSS are some of the most important front end platforms generally and with the syntax similarity of JavaScript to Java, where I had experience, I decided to work with Electron.
 
+### Creating the GUI in HTML/CSS
+
+The main objective of the GUI was to reduce user errors and the time of completing the task for one video. This was archieved by:
+
+- showing as much information as possible on the screen
+- showing the questions and answers in clear, bold letters
+- showning clearly which answers are selected
+- showing the banner with base video data on always on top
+- giving quick access to the video page, channel page and a video preview page
+
+User errors might include: putting the answer to a question in the wrong excel cell, confusing the code of two answers, not filling out every answer, writing durations or dates in the wrong format. All of these errors are made impossible with using the application.
+
+Making the whole process of answering each question more streamlined does not only reduce errors, but allows the user to spend their time thinking about the question and not about answer codes and excel sheets.
+
 ### Getting the data from YouTube
 
 My first Intuition for getting the video data was to develop a web crawler that would download the HTML of the video page and channel page where most of the needed information would have been available. I even would have been able to collect some data that was not available through the YouTube API, such as social media links. However this process would have been a lot messier and after some trial with the YouTube API I decided against a web crawler.
@@ -103,16 +102,9 @@ Working in JavaScript was new and the asynchronous and nested functionality of r
 
 ### Converting the questions and answers in Python
 
-To create the form for the user to fill out and select multiple choice options, the application dynamically loads a list of question objects which contain all the needed information to create the section of the form for one question:
-The question itself, if it is a multiple choice answer or a text answer, or both, and then the multiple choice options with the labels and codes for each label.
-I created a python script that would dynamically create a .js text file with the object list from a csv file because manually writing the list in JavaScript would have been a very long and cumbersome process.
+The application has to create the form for the user to fill out and select multiple choice options. At start the application dynamically loads a list of question objects which contain all the needed information to create the section of the form for one question block, and then loops over all question blocks
 
-### Creating the GUI in HTML/CSS
-
-- showing as much information as possible on the screen
-- showing the banner with base video data on top
-- minimize scrolling
-- checking for user errors
+I created a python script that dynamically creates a JavaScript text file with the object list, because manually writing the list in JavaScript would have been a very long and repetitive process.
 
 # Installation
 
