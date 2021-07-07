@@ -55,9 +55,10 @@ An excel sheet is created and the data is written into the excel sheet.
 
 ## 3. Development and key design decisions.
 
-### Why electron?
+### Why Electron?
 
-
+<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/384px-Electron_Software_Framework_Logo.svg.png" alt="Electron"
+	title="Electron" width="150" />
 
 Starting out with this project, the first decision I had to make was what programming language / platform to use. I had some general requirements to the project that I considered key:
 I wanted
