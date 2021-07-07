@@ -8,6 +8,10 @@ This Application was needed in the context of a research project where videos an
 It was part of the data collection process.
 The data collection process that was used before consisted of either manually copying data from the website into an excel sheet or entering a number in the excel sheet referring to the answer to a multiple choice question.
 This had to be done for hundreds of videos.
+
+![Old data collection process](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/old_data_collection_process.PNG
+?raw=true)
+
 This process had two problems that could easily be fixed with software:
 
 1. Manually copying the data from the website is very inefficient.
