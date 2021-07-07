@@ -2,11 +2,9 @@
 
 The Video Analysis App is an automated video classification tool that helps video research coders reduce errors while coding video data and improve their coding speed.
 
-
-![GUI overview](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_overview.PNG?raw=true)
-
-
-
+<p align="center">
+	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_overview.PNG" alt="GUI overview" title="GUI overview" width="450"/>
+</p>
 
 ## 1. Motivation
 
@@ -15,8 +13,9 @@ It was used for data collection.
 The data collection process that was used before consisted of either manually copying data from the website into an excel sheet or entering a number in the excel sheet referring to the answer to a multiple choice question.
 This had to be done for hundreds of videos.
 
-![Old data collection process](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/old_data_collection_process.PNG?raw=true)
-
+<p align="center">
+	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/old_data_collection_process.PNG?" alt="Old data collection process" title="Old data collection process"/>
+</p>
 This process had two problems that could easily be fixed with software:
 
 1. Manually copying the data from the website is very inefficient.
@@ -28,8 +27,9 @@ Especially the first problem motivated me to start the project. The second probl
 
 ### Data retrieval from the YouTube API
 
-![preview video data](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/video_data.PNG?raw=true)
-
+<p>
+	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/video_data.PNG?" alt="preview video data" title="preview video data" width="250"/>
+</p>
 Some data that is needed is readily available through the YouTube API. This includes the following data:
 
 Video data includes: link, title, duration, upload date, view count, upvote count, downvote count, comments count
@@ -45,13 +45,15 @@ All this data is cached while the user fills out the form.
 Some required data is not directly available through the YouTube API or requires interpretation of for example the video content or comments. This Data is collected manually through a form where the user can click on the answer to a multiple choice question or enter text in a text field.
 Questions that need to be manually filled out include:
 
-![preview form](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/form_multiple_choice.PNG?raw=true)
-
 - Are there any other eye-catching characteristics (e.g. colors) of the thumbnail?
 - How often are videos uploaded by the channel?
 - Is there negative feedback to the producers in the comments?
 
 The answers are saved along the data from the YouTube API.
+
+<p>
+	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/form_multiple_choice.PNG" alt="preview form" title="preview form" width="550"/>
+</p>
 
 ### Data transformation and export
 
