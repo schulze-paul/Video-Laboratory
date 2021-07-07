@@ -2,6 +2,8 @@
 
 ## 1. Motivation
 
+![GUI overview](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_overview.PNG?raw=true)
+
 This Application was needed in the context of a research project where videos and channels on YouTube are analysed.
 It was part of the data collection process.
 The data collection process that was used before consisted of either manually copying data from the website into an excel sheet or entering a number in the excel sheet referring to the answer to a multiple choice question.
@@ -18,7 +20,6 @@ Especially the first problem motivated me to start the project. The second probl
 ### Data retrieval from the YouTube API
 
 ![preview video data](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/video_data.PNG?raw=true)
-
 Some of the data that is needed is readily available through the YouTube API. This includes the following data:
 
 About the video
@@ -46,10 +47,10 @@ All this data is cached while the user fills out the form.
 
 ### Manual data entry
 
-![preview form](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/form_multiple_choice.PNG?raw=true)
-
 Some of the required data is not directly available through the YouTube API or requires interpretation of for eample the video content or comments. This Data is collected manually through a form where the user can click on the answer to a multiple choice question or enter text in a text field.
 Questions that need to be manually filled out include:
+
+![preview form](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/form_multiple_choice.PNG?raw=true)
 
 - Are there any other eye-catching characteristics (e.g. colours) of the thumbnail?
 - How often are videos uploaded by the channel?
