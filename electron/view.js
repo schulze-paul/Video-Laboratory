@@ -1,6 +1,7 @@
 const $ = require("jquery");
 const fs = require("fs");
 const { shell } = require("electron");
+const path = require("path")
 
 // Function to keep the video title, thumbnail, buttons at top
 var $window = $(window),
@@ -272,7 +273,7 @@ function excelFileButton(sortedData, questionAnswer) {
   // open user dialog to write the data to file
   const dialog = require("electron").remote.dialog;
   const options = {
-    defaultPath: __dirname + "/" + sortedData.ownId + ".xlsx",
+    defaultPath: path.resolve(__dirname, '..', sortedData.ownId + ".xlsx"),
   };
 
   dialog.showSaveDialog(null, options).then(function (promise) {
