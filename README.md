@@ -57,8 +57,6 @@ An excel sheet is created and the data is written into the excel sheet.
 
 ### Why electron?
 
-
-
 Starting out with this project, the first decision I had to make was what programming language / platform to use. I had some general requirements to the project that I considered key:
 I wanted
 
@@ -88,7 +86,7 @@ The main objective of the GUI was to reduce user errors and the time of completi
 - showing the banner with base video data on always on top
 - giving quick access to the video page, channel page and a video preview page
 
-User errors might include: putting the answer to a question in the wrong excel cell, confusing the code of two answers, not filling out every answer, writing durations or dates in the wrong format. All of these errors are made impossible with using the application.
+User errors might include: putting the answer to a question in the wrong excel cell, confusing the code of two answers, not filling out every answer and writing durations or dates in the wrong format. All of these errors are made impossible with using the application.
 
 Making the whole process of answering each question more streamlined does not only reduce errors, but allows the user to spend their time thinking about the question and not about answer codes and excel sheets.
 
@@ -140,7 +138,7 @@ I created a python script that dynamically creates a JavaScript text file with t
         ],
         buttonData: [77, 1, 2, 3, 4, 66],
     }),
-    
+
 # Installation
 
 Installation requires:
