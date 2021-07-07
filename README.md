@@ -1,12 +1,9 @@
 # Video Analysis App
+
+The Video Analysis App is an automated video classification tool that helps video research coders reduce errors while coding video data and improve their coding speed.
+
+
 ![GUI overview](https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_overview.PNG?raw=true)
-
-Overview:
-1. Motivation
-2. Functionality
-3. Development and key design decisions
-4. Installation
-
 
 
 
