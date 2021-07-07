@@ -8,8 +8,8 @@ The Video Analysis App is an automated video classification tool that helps vide
 
 ## 1. Motivation
 
-This Application was needed in the context of a research project where videos and channels on YouTube are analyzed.
-It was used for data collection.
+This application was needed in the context of a research project where videos and channels on YouTube are analyzed.
+The application was part of the data collection process.
 The data collection process that was used before consisted of either manually copying data from the website into an excel sheet or entering a number in the excel sheet referring to the answer to a multiple choice question.
 This had to be done for hundreds of videos.
 
