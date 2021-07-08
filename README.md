@@ -166,7 +166,13 @@ I created a `Python` script that dynamically creates a `JavaScript` text file wi
 
 # 4. Installation
 
-Installation requires:
+### Windows
+
+The newest release [v0.1.4](https://github.com/bl4ckp4nther4/Video-Laboratory/releases/tag/v0.1.4) is available [here](https://github.com/bl4ckp4nther4/Video-Laboratory/releases/download/v0.1.4/Video-Laboratory-win32-x64.zip).
+
+### Electron
+
+This app can be run on any platform in Electron. Installation requires:
 
 ```
 electron: 9.0.4
