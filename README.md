@@ -23,7 +23,7 @@ This had to be done for hundreds of videos.
 This process had two problems that could easily be fixed with software:
 
 1. Manually copying the data from the website is very inefficient.
-2. Writing a code to the multiple choice question is very unintuitive and sometimes requires a lot of scrolling to get from the excel cell with the question and the answer codes to the cell where the answer needs to be written.
+2. Writing a number as an answer to a multiple choice question is very unintuitive. It sometimes required scrolling to get from the excel cell with the question and the answer codes to the cell where the answer needs to be written.
 
 Especially the first problem motivated me to start the project. The second problem was addressed later for completeness.
 
