@@ -106,8 +106,8 @@ function createForm(sortedData) {
         // type of the input (link, ...)
         type = questionData[index].type;
         $("#formSection").append(`
-          <article class="item" data-key="${formId}">
-            <h4>${question}</h4>
+          <article class="typeArticle" data-key="${formId}">
+            <p class="question">${question}</p>
             <input
               type="${type}"
               name="input${formId}"
@@ -118,8 +118,7 @@ function createForm(sortedData) {
           </article>
             `);
       }
-
-      if (typingInput == false) {
+      else {
         // create a button formitem
         buttonLabel = questionData[index].buttonLabel;
         buttonData = questionData[index].buttonData;
@@ -129,6 +128,7 @@ function createForm(sortedData) {
       }
     } catch (err) {
       //question does not exist, try next question
+      console.log(err)
     }
   }
 }
@@ -582,4 +582,38 @@ function writeDataJSON(newData, fileName) {
       //Everything went OK!
     }
   });
+}
+
+
+function buttonArticleFun(formId, question, buttonData, buttonLabel) {
+  head = `<article class="buttonArticle" id="article${formId}">
+            <p class="question">${question}</p>
+            <div class="buttonContainer">`;
+
+  foot = `</div>
+        </article>`;
+
+  buttonArticles = getButtonArticles(formId, buttonData, buttonLabel);
+
+  full_div = head + buttonArticles + foot;
+
+  return full_div;
+}
+
+function getButtonArticles(formId, buttonData, buttonLabel) {
+  articles = ``
+
+  for (index = 0; index < buttonData.length; index++) {
+
+    article = `<div class= "buttonOpen" id="button${index}${formId}"
+              onclick="javasript:formButtonPressed(${formId},${buttonData[index]}, ${index})">
+              <label>
+              ${buttonLabel[index]}
+              </label>
+              </div>`;
+    articles = articles + article;
+    console.log(articles);
+  }
+  return articles;
+
 }
