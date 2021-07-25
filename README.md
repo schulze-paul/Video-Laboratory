@@ -1,10 +1,10 @@
-# Video Analysis App
+# Video Laboratory
 
 [Motivation](#1-motivation) | [Functionality](#2-functionality) | [Development and Key Design Decisions](#3-development-and-key-design-decisions) | [Installation](#4-installation)
 
 ---
 
-The Video Analysis App is an automated video classification tool that helps video research coders reduce errors while coding video data and improve their coding speed. It is written in `JavaScript` and `HTML`/`CSS` using the `Electron` framework
+Video Laboratory is an automated video classification tool that helps video research coders reduce errors while coding video data and improve their coding speed. It is written in `JavaScript` and `HTML`/`CSS` using the `Electron` framework.
 
 <p align="center">
 	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_overview.PNG" alt="GUI overview" title="GUI overview" width="450"/>
@@ -23,7 +23,7 @@ This had to be done for hundreds of videos.
 This process had two problems that could easily be fixed with software:
 
 1. Manually copying the data from the website is very inefficient.
-2. Writing a code to the multiple choice question is very unintuitive and sometimes requires a lot of scrolling to get from the excel cell with the question and the answer codes to the cell where the answer needs to be written.
+2. Writing a number as an answer to a multiple choice question is very unintuitive. It sometimes required scrolling to get from the excel cell with the question and the answer codes to the cell where the answer needs to be written.
 
 Especially the first problem motivated me to start the project. The second problem was addressed later for completeness.
 
@@ -166,7 +166,13 @@ I created a `Python` script that dynamically creates a `JavaScript` text file wi
 
 # 4. Installation
 
-Installation requires:
+### Windows
+
+The newest release [v0.1.4](https://github.com/bl4ckp4nther4/Video-Laboratory/releases/tag/v0.1.4) is available [here](https://github.com/bl4ckp4nther4/Video-Laboratory/releases/download/v0.1.4/Video-Laboratory-win32-x64.zip).
+
+### Electron
+
+This app can be run on any platform in Electron. Installation requires:
 
 ```
 electron: 9.0.4
