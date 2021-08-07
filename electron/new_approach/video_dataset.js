@@ -90,11 +90,13 @@ class VideoDataset {
         this.sortedData.channel.id = rawVideoData.items[0].snippet.channelId;
         
         // transform the channel data
-        this.sortedData.publish = this.fullTimeToDate(
+        this.sortedData.channel.publish = this.fullTimeToDate(
             rawChannelData.items[0].snippet.publishedAt
-          );
-          this.sortedData.channel.subsCount = rawChannelData.items[0].statistics.subscriberCount;
-          this.sortedData.channel.videoCount = rawChannelData.items[0].statistics.videoCount;
+        );
+        this.sortedData.channel.subsCount = rawChannelData.items[0].statistics.subscriberCount;
+        this.sortedData.channel.videoCount = rawChannelData.items[0].statistics.videoCount;
+
+        return this.sortedData;
     }
 
     
