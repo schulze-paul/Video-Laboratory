@@ -61,6 +61,40 @@
           </button>
         </div>
       </div>
+    
+
+      <template>
+        <div id="app" style="color:dodgerblue;">
+          <splitpanes horizontal class="default-theme">
+            <pane>1</pane>
+            <pane>2</pane>
+            <pane>3</pane>
+          </splitpanes>
+        </div>
+      </template>
+      <script>
+        // import FileTable from '@/components/FileTable'
+        import { Splitpanes, Pane } from 'splitpanes'
+        import 'splitpanes/dist/splitpanes.css'
+        import '@/components/default.css'
+        
+        export default {
+          name: 'App',
+        
+          components: {
+            // FileTable,
+            Splitpanes,
+            Pane
+          },
+        
+          data: () => ({
+            //
+          })
+        }
+        </script>
+
+
+
 
       <div class="form" id="formSection"></div>
 
