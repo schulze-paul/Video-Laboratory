@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Video Laboratory</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style type="text/css">
+      #contact-list {
+        height: 150px;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1></h1>
+      <label for="videoLinkInputLabel">Video Link</label>
+      <input
+        type="link"
+        name="videoLinkInput"
+        value="https://www.youtube.com/watch?v=WbEGmghn_jo"
+        id="videoLinkInput"
+        placeholder="Video Link"
+        class="form-control"
+        required
+      />
+      <label for="ownIdInputLabel">Set the ID</label>
+      <input
+        type="text"
+        name="ownIdInput"
+        value=""
+        id="ownIdInput"
+        placeholder="Own ID"
+        class="form-control"
+        required
+      />
+      <label
+        onclick="javascript:goButtonPressed()"
+        class="btn btn-primary"
+        id="submitVideoLink"
+      >
+        Go!
+      </label>
+
+      <div class="videoPreview" id="videoPreview">
+        <img src="" id="videoThumb" class="videoThumb" />
+        <div id="videoTitle" class="videoTitle">
+          <label id="videoTitleLabel" class="videoTitleLabel"></label>
+        </div>
+        <div id="pageButtonContainer" class="pageButtonContainer">
+          <button onclick="javascript:videoPageButton()" id="videoPage">
+            Video Page
+          </button>
+          <button onclick="javascript:channelPageButton()" id="videoPage">
+            Channel Page
+          </button>
+          <button onclick="javascript:searchPageButton()" id="videoPage">
+            Search Page
+          </button>
+        </div>
+      </div>
+
+      <div class="form" id="formSection"></div>
+
+      <div class="bottomButtons" id="bottomButtons">
+        <button
+          onclick="javascript:excelFileButton(sortedVideoData, questionAnswer)"
+          class="btn btn-primary"
+          id="exportButton"
+          disabled
+        >
+          Export Excel Sheet
+        </button>
+
+        <button
+          onclick="javascript:reloadButton()"
+          class="btn btn-primary"
+          id="reloadButton"
+        >
+          New Video
+        </button>
+      </div>
+
+      <script src="./apiKey.js"></script>
+      <script src="./new_approach/new_approach.js"></script>
+      <script src="./new_approach/video_dataset.js"></script>
+
+    </div>
+  </body>
+</html>
