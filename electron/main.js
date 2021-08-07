@@ -21,6 +21,13 @@ function createWindow() {
       slashes: true,
     })
   );
+    
 }
 
+// create window
 app.on("ready", createWindow);
+
+// close window
+app.on('window-all-closed', function () {
+  if (process.platform !== 'darwin') app.quit()
+})
