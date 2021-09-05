@@ -1,9 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 import SplitPane from 'react-split-pane';
-
+import LinkForm from './components/LinkForm.js'
 
 function App() {
+  const link = ''
+
+  const submitLink = (e) => {
+    e.preventDefault()
+    
+    if(!link) {
+      return
+    }
+    console.log(link)
+  }
+
   return (
     <div className="App">
 
@@ -25,6 +36,7 @@ function App() {
             </header>
           </div>
           <div className="view-pane">
+            <LinkForm submitLink={submitLink}/>
           </div>
         </SplitPane>
     </div>
