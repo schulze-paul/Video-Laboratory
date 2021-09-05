@@ -2,18 +2,28 @@ import logo from './logo.svg';
 import './App.css';
 import SplitPane from 'react-split-pane';
 import LinkForm from './components/LinkForm.js'
+import { useState } from 'react';
+import downloadData from './data/VideoDataset.js'
+// import apiKey from 'secrets.YOUTUBEAPIKEY'
+import apiKey from'./data/ApiKey.js'
+
+
 
 function App() {
-  const link = ''
+  const [link, setLink] = useState('')
 
-  const submitLink = (e) => {
-    e.preventDefault()
-    
-    if(!link) {
-      return
-    }
+
+  // set Video link
+  const setVideoLink = async (link) => {
     console.log(link)
+    setLink(link)
+    var dataset = downloadData(link, apiKey)
+    //const getRawData = async () => dataset.downloadData()
+    //var rawData = getRawData()
+
+    console.log(dataset)
   }
+
 
   return (
     <div className="App">
@@ -36,7 +46,7 @@ function App() {
             </header>
           </div>
           <div className="view-pane">
-            <LinkForm submitLink={submitLink}/>
+            <LinkForm setVideoLink={setVideoLink}/>
           </div>
         </SplitPane>
     </div>
