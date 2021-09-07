@@ -86,3 +86,21 @@
 .Resizer.disabled:hover {
   border-color: transparent;
 }
+
+.link-form {
+  border-color: "grey";
+  background: rgba(0, 0, 0, 1);
+}
+.player-wrapper {
+  width: auto;
+  height: auto;
+  background-color: darkgray;
+}
+.react-player {
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.react-player > div {
+  position: absolute;
+}

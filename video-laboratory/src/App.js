@@ -1,57 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
-import SplitPane from 'react-split-pane';
 import LinkForm from './components/LinkForm.js'
 import { useState } from 'react';
-import downloadData from './data/VideoDataset.js'
-// import apiKey from 'secrets.YOUTUBEAPIKEY'
+import dataFunctions from './data/VideoDataset.js'
 import apiKey from'./data/ApiKey.js'
+import SplitScreen from './components/SplitScreen';
 
-
+const downloadData = dataFunctions.downloadData
+const transformData = dataFunctions.transformData
 
 function App() {
-  const [link, setLink] = useState('')
+    const [link, setLink] = useState('')
+    const [showSplit, setShowSplit] = useState(false)
+    const [sortedData, setSortedData] = useState(null)
 
+    // set Video link
+    const submitVideoLink = async (link) => {
+        setLink(link)
+        getSortedData(link).then(function(data) {
+            setSortedData(data)
+            console.log(sortedData)
+            setShowSplit(true)
+        })
+            
+    }
+    
+    // download and sort data
+    const getSortedData = async (link) => {
+        const rawData = await downloadData(link, apiKey)
+        console.log(rawData)
+        const sortedData = transformData(rawData)
+        console.log(sortedData)
+        return sortedData
+    }
 
-  // set Video link
-  const setVideoLink = async (link) => {
-    console.log(link)
-    setLink(link)
-    var dataset = downloadData(link, apiKey)
-    //const getRawData = async () => dataset.downloadData()
-    //var rawData = getRawData()
-
-    console.log(dataset)
-  }
-
-
-  return (
+    return (
     <div className="App">
-
-      <SplitPane split="vertical" defaultSize="50%">
-          <div className="left-pane">
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                >
-                Learn React
-              </a>
-            </header>
-          </div>
-          <div className="view-pane">
-            <LinkForm setVideoLink={setVideoLink}/>
-          </div>
-        </SplitPane>
-    </div>
-             
-  );
+        {showSplit ? <SplitScreen link={link} sortedData={sortedData}/> : <LinkForm submitVideoLink={submitVideoLink}/>}
+    </div>    
+    );
 }
 
 export default App;

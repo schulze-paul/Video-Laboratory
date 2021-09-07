@@ -7,6 +7,8 @@ let downloadData = async function(link, apiKey){
     var videoPart = "snippet, statistics, contentDetails, recordingDetails";
     var apiChannelUrl = "https://www.googleapis.com/youtube/v3/channels";
     var channelPart = "snippet, statistics";
+
+    //console.log(link)
     var videoId = getVideoIdFromLink(link)
 
     // set up the video options
@@ -16,12 +18,9 @@ let downloadData = async function(link, apiKey){
         key: apiKey,
     };
 
-    console.log(videoOptions)
-
     try {
         // get the video data
         var rawVideoData = await $.getJSON(apiVideoUrl, videoOptions);  
-        console.log(await rawVideoData);
                 
         // set up channel options for GET request
         var channelId = await rawVideoData.items[0].snippet.channelId;
@@ -34,7 +33,6 @@ let downloadData = async function(link, apiKey){
         // get channel data 
         var rawChannelData = await $.getJSON(apiChannelUrl, channelOptions);
         // log the data in the console
-        console.log(rawChannelData);
         return {rawVideoData: await rawVideoData, rawChannelData: await rawChannelData};
     }                
     catch (err) {
@@ -43,7 +41,7 @@ let downloadData = async function(link, apiKey){
     };
 };
 
-let transformData = async function(rawData){
+let transformData = function(rawData){
     var rawVideoData = rawData.rawVideoData;
     var rawChannelData = rawData.rawChannelData;
 
@@ -148,4 +146,6 @@ let fullTimeToDate = function(fullTime) {
     return day + "." + month + "." + year;
 }
 
-export default downloadData
+export default {downloadData, transformData}
+
+
