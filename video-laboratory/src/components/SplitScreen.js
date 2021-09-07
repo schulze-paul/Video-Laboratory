@@ -1,10 +1,10 @@
 import SplitPane from 'react-split-pane';
 import LeftScreen from './LeftScreen.js';
 
-const SplitScreen = ({link, sortedData}) => {
+const SplitScreen = ({link, title, channel}) => {
     return (
         <SplitPane split="vertical" defaultSize="30%">
-            <LeftScreen link={link} sortedData={sortedData}/>
+            <LeftScreen link={link} title={title} channel={channel}/>
             <p>right side</p>
         </SplitPane>
     )

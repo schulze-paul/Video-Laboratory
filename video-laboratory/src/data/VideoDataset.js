@@ -33,7 +33,7 @@ let downloadData = async function(link, apiKey){
         // get channel data 
         var rawChannelData = await $.getJSON(apiChannelUrl, channelOptions);
         // log the data in the console
-        return {rawVideoData: await rawVideoData, rawChannelData: await rawChannelData};
+        return {rawVideoData: rawVideoData, rawChannelData: rawChannelData};
     }                
     catch (err) {
         console.log(err)
@@ -41,7 +41,7 @@ let downloadData = async function(link, apiKey){
     };
 };
 
-let transformData = function(rawData){
+let transformData = async function(rawData){
     var rawVideoData = rawData.rawVideoData;
     var rawChannelData = rawData.rawChannelData;
 

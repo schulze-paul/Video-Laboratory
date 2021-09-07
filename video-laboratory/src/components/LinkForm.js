@@ -1,13 +1,14 @@
 import { useState } from "react"
 
 const LinkForm = ({submitVideoLink}) => {
-    const [link, setLink] = useState('https://www.youtube.com/watch?v=mzg4RIRbS3E')
+    const [link, setLink] = useState('https://www.youtube.com/watch?v=mzg4RIRbS3E') //
+
+    
 
     const onSubmit = (e) => {
         e.preventDefault()
 
         if(!link) {
-            alert('please')
             return
         }
         submitVideoLink(link)

@@ -1,7 +1,10 @@
-const VideoDataDisplay = ({sortedVideoData}) => {
+import { useState, useEffect } from "react";
+
+const VideoDataDisplay = ({title, channel}) => {
     return (
         <div>
-            <h3>Video Title</h3>
+            <p>{title}</p>
+            <p>{channel}</p>
         </div>
     )
 }

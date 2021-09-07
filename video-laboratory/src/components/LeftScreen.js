@@ -1,11 +1,11 @@
 import VideoDataDisplay from "./VideoDataDisplay"
 import VideoView from "./VideoView"
 
-const LeftScreen = ({link, sortedData}) => {
+const LeftScreen = ({link, title, channel}) => {
     return (
         <div>
             <VideoView link={link}/>
-            <VideoDataDisplay sortedData={sortedData} />
+            <VideoDataDisplay title={title} channel={channel} />
         </div>
     )
 }
