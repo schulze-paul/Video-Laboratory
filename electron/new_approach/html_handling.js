@@ -1,3 +1,4 @@
+const SplitPane = require("react-split-pane");
 
 
 
