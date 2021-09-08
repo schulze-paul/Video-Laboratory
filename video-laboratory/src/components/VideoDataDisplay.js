@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import PropTypes from 'prop-types'
 
 const VideoDataDisplay = ({title, channel}) => {
     return (
@@ -7,6 +7,15 @@ const VideoDataDisplay = ({title, channel}) => {
             <p>{channel}</p>
         </div>
     )
+}
+
+VideoDataDisplay.defaultProps = {
+    title: '',
+    channel: '',
+}
+VideoDataDisplay.propTypes = {
+    title: PropTypes.string,
+    channel: PropTypes.string,
 }
 
 export default VideoDataDisplay

@@ -7,6 +7,9 @@ let downloadData = async function(link, apiKey){
     var videoPart = "snippet, statistics, contentDetails, recordingDetails";
     var apiChannelUrl = "https://www.googleapis.com/youtube/v3/channels";
     var channelPart = "snippet, statistics";
+    var apiCommentUrl = "https://www.googleapis.com/youtube/v3/commentThreads"
+    var commentsPart = "snippet, replies"
+    var commentsMaxResults = 100
 
     //console.log(link)
     var videoId = getVideoIdFromLink(link)
@@ -29,11 +32,20 @@ let downloadData = async function(link, apiKey){
             key: apiKey,
             id: await channelId,
         };
-        
         // get channel data 
         var rawChannelData = await $.getJSON(apiChannelUrl, channelOptions);
-        // log the data in the console
-        return {rawVideoData: rawVideoData, rawChannelData: rawChannelData};
+        
+        // set up comments options for the GET request
+        var commentsOptions = {
+            part: commentsPart,
+            videoId: videoId,
+            key: apiKey,
+            maxResults: commentsMaxResults, 
+        }
+        // get the comment data
+        var rawCommentData = await $.getJSON(apiCommentUrl, commentsOptions)
+
+        return {rawVideoData: rawVideoData, rawChannelData: rawChannelData, rawCommentData: rawCommentData};
     }                
     catch (err) {
         console.log(err)
@@ -44,8 +56,8 @@ let downloadData = async function(link, apiKey){
 let transformData = async function(rawData){
     var rawVideoData = rawData.rawVideoData;
     var rawChannelData = rawData.rawChannelData;
-
-
+    var rawCommentData = rawData.rawCommentData;
+    
     // set the current date
     var date = new Date();
     var month = pad2(Number(date.getMonth()) + 1);
@@ -53,9 +65,10 @@ let transformData = async function(rawData){
     var year = pad2(date.getFullYear());
 
     // set up the data object
-    var sortedData = {video: {}, channel: {}};
+    var sortedData = {video: {}, channel: {}, comments: {}};
     
     // transform the video data
+    // =========================================================
     sortedData.fourLetter = getFourLetters(
         rawVideoData.items[0].snippet.channelTitle,
         rawVideoData.items[0].snippet.title,
@@ -69,10 +82,10 @@ let transformData = async function(rawData){
     sortedData.video.link = "https://www.youtube.com/watch?v=" + rawVideoData.items[0].id;
     sortedData.video.duration = formatVideoLength(
         rawVideoData.items[0].contentDetails.duration
-    );
-    sortedData.video.upvoteCount = rawVideoData.items[0].statistics.likeCount;
-    sortedData.video.downvoteCount = rawVideoData.items[0].statistics.dislikeCount;
-    sortedData.video.commentsCount = rawVideoData.items[0].statistics.commentCount;
+        );
+        sortedData.video.upvoteCount = rawVideoData.items[0].statistics.likeCount;
+        sortedData.video.downvoteCount = rawVideoData.items[0].statistics.dislikeCount;
+        sortedData.video.commentsCount = rawVideoData.items[0].statistics.commentCount;
     sortedData.video.viewCount = rawVideoData.items[0].statistics.viewCount;
     sortedData.video.thumbURL = rawVideoData.items[0].snippet.thumbnails.medium.url;
     sortedData.video.uploadDate = fullTimeToDate(
@@ -82,18 +95,34 @@ let transformData = async function(rawData){
     sortedData.channel.id = rawVideoData.items[0].snippet.channelId;
     
     // transform the channel data
+    // ==========================================================
     sortedData.channel.publish = fullTimeToDate(
         rawChannelData.items[0].snippet.publishedAt
     );
     sortedData.channel.subsCount = rawChannelData.items[0].statistics.subscriberCount;
     sortedData.channel.videoCount = rawChannelData.items[0].statistics.videoCount;
+    
+    
+    // transform the comment data
+    var commentArray = []
+    for (const rawComment of rawCommentData.items) {
+        // take data from raw 
+        var comment = {} 
+        comment.commentId = rawComment.id
+        comment.authorName = rawComment.snippet.topLevelComment.snippet.authorDisplayName
+        comment.text = rawComment.snippet.topLevelComment.snippet.textOriginal
 
+        // append comment
+        commentArray.push(comment)
+    }
+    sortedData.comments = commentArray
+    
     return sortedData;
-}
-
-// helper functions
-let getVideoIdFromLink = function(videoLink) {
-    var VID_REGEX =
+    }
+    
+    // helper functions
+    let getVideoIdFromLink = function(videoLink) {
+        var VID_REGEX =
         /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
     return videoLink.match(VID_REGEX)[1];
 }

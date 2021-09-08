@@ -7,7 +7,8 @@ const VideoView = ({link}) => {
                 className='react-player' 
                 url={link} 
                 playing={true} 
-                controls={true} 
+                controls={true}
+                sound={false} 
                 width="100%"
                 height="100%"
             />

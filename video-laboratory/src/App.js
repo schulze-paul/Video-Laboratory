@@ -20,13 +20,17 @@ function App() {
         try {
             setLink(link)
             setShowLoading(true)
-            const transformedData = await getSortedData(link)
-            console.log(transformedData)
-            setSortedData(transformedData)
-            setShowLoading(false)
-            setShowSplit(true)
-            console.log(sortedData)
-            return transformedData
+            getSortedData(link)
+                .then(
+                    (transformedData) => {
+                        console.log(transformedData)
+                        setSortedData(transformedData)
+                        setShowLoading(false)
+                        setShowSplit(true)
+                        console.log(sortedData)
+                    }
+
+                )
         }
         catch {
             alert('Link is not valid')
@@ -44,17 +48,33 @@ function App() {
         return transformedData
     }
 
-    return (
-    <div className="App">
-        {
-            showLoading 
-                ? <p>loading</p> 
-                : showSplit 
-                    ? <SplitScreen link={link} title={sortedData.video.title} channel={sortedData.channel.name}/> 
-                    : <LinkForm submitVideoLink={submitVideoLink}/>
-        }
-    </div>    
-    );
+    if (showLoading) {
+        return (
+            <div className="App">
+                <p>loading</p>
+            </div>    
+        )
+    }
+    if (!showSplit && !showLoading) {
+        return (
+            <div className="App">
+                <LinkForm submitVideoLink={submitVideoLink}/>
+            </div>
+        )
+    }
+    if (showSplit && !showLoading) {
+        console.log(sortedData.comments)
+        return (
+            <div className="App">    
+                <SplitScreen 
+                    link={link} 
+                    title={sortedData.video.title} 
+                    channel={sortedData.channel.name}
+                    comments={sortedData.comments}
+                /> 
+            </div>    
+        )
+    }
 }
 
 export default App;
