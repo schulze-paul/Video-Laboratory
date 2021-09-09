@@ -1,18 +1,21 @@
+
+
 # Video Laboratory
 
-[Motivation](#1-motivation) | [Functionality](#2-functionality) | [Development and Key Design Decisions](#3-development-and-key-design-decisions) | [Installation](#4-installation)
+<p align=center>
+	<a href="#1-motivation">Motivation</a> • <a href="#2-functionality">Functionality</a> • <a href="#3-development-and-key-design-decisions">Development and Key Design Decisions</a> • <a href="#4-installation">Installation</a>
+</p>
 
----
 <img align="center" src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/logo_2_small.png" size=150>
 
-<h6 align="center">Made by Paul Schulze • :globe_with_meridians: <a href="https://schulze-paul.github.io">https://schulze-paul.github.io</a></h6>
-
 Video Laboratory is an automated video classification tool that helps video research coders reduce errors while coding video data and improve their coding speed. It is written in `JavaScript` and `HTML`/`CSS` using the `Electron` framework.
-
 
 <p align="center">
 	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_overview.PNG" alt="GUI overview" title="GUI overview" width="450"/>
 </p>
+
+<h6 align="center">Made by Paul Schulze • :globe_with_meridians: <a href="https://schulze-paul.github.io">https://schulze-paul.github.io</a></h6>
+
 
 ## 1. Motivation
 
