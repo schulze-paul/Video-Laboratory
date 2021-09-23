@@ -71,8 +71,10 @@ Link form
 left screen
 */
 .left-screen {
-  background-color: darkgreen;
-  height: 100vh;
+  background-color: rgb(229, 229, 236);
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /*
@@ -95,7 +97,43 @@ react-player
 video comments display
 */
 .video-comments-display {
-  overflow-y: scroll;
-  height: 50%;
-  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: rgb(87, 87, 87);
+  background-color: lightblue;
+}
+.comment-display {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: rgb(229, 229, 236);
+
+  border-style: solid;
+  border-color: darkgray;
+  border-top-width: 1px;
+  border-bottom-width: 0px;
+}
+
+.video-data-display {
+  align-items: center;
+}
+
+.video-title {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: rgb(66, 66, 66);
+  font-size: large;
+}
+.channel-name {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: -15px;
+  color: rgb(66, 66, 66);
+  font-size: smaller;
 }
