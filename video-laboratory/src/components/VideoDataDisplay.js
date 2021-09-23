@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types'
 
-const VideoDataDisplay = ({title, channel}) => {
+
+const VideoDataDisplay = ({title, channel, onVideoClick, onChannelClick}) => {
     return (
-        <div>
-            <p>{title}</p>
-            <p>{channel}</p>
+        <div className='video-data-display'>
+            <p className='video-title' onClick={onVideoClick}>{title}</p>
+            <p className='channel-name' onClick={onChannelClick}>{channel}</p>
         </div>
     )
 }

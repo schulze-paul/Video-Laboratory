@@ -1,9 +1,10 @@
 import './App.css';
-import LinkForm from './components/LinkForm.js'
 import { useState, useEffect } from 'react';
+import LinkForm from './components/LinkForm.js'
 import dataFunctions from './data/VideoDataset.js'
 import apiKey from'./data/ApiKey.js'
 import SplitScreen from './components/SplitScreen';
+import questionData from './data/questionsInputData';
 
 
 const downloadData = dataFunctions.downloadData
@@ -14,6 +15,16 @@ function App() {
     const [showSplit, setShowSplit] = useState(false)
     const [showLoading, setShowLoading] = useState(false)
     const [sortedData, setSortedData] = useState({})
+
+    const onVideoClick = () =>{
+        const electron = require("electron");
+        electron.shell.openExternal(sortedData.video.link)
+    }
+    
+    const onChannelClick = () =>{
+        const electron = require("electron");
+        electron.shell.openExternal(sortedData.channel.link)
+    }
 
     // set Video link
     const submitVideoLink = async (link) => {
@@ -71,6 +82,8 @@ function App() {
                     title={sortedData.video.title} 
                     channel={sortedData.channel.name}
                     comments={sortedData.comments}
+                    onVideoClick={onVideoClick}
+                    onChannelClick={onChannelClick}
                 /> 
             </div>    
         )

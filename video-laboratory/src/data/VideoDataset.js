@@ -93,6 +93,7 @@ let transformData = async function(rawData){
     );
     sortedData.channel.name = rawVideoData.items[0].snippet.channelTitle;
     sortedData.channel.id = rawVideoData.items[0].snippet.channelId;
+    sortedData.channel.link = "https://www.youtube.com/channel/+" + sortedData.channel.id 
     
     // transform the channel data
     // ==========================================================

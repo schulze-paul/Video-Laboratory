@@ -10,7 +10,7 @@ const VideoCommentsDisplay = ({comments}) => {
         console.log(comments)
         return (
             <div className='video-comments-display'>
-                {comments.map((comment) => (<p key={comment.commentId}>{comment.text}</p>))}    
+                {comments.map((comment) => (<p className='comment-display' key={comment.commentId}>{comment.text}</p>))}    
             </div>
         )
     }
