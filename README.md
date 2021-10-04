@@ -3,7 +3,7 @@
 # Video Laboratory
 
 <p align=center>
-	<a href="#1-motivation">Motivation</a> • <a href="#2-functionality">Functionality</a> • <a href="#3-development-and-key-design-decisions">Development and Key Design Decisions</a> • <a href="#4-installation">Installation</a>
+	<a href="#1-motivation">Motivation</a> • <a href="#2-functionality">Functionality</a> • <a href="#3-development-and-key-design-decisions">Development and Key Design Decisions</a> • <a href="#4-installation">Installation</a> • <a href="https://github.com/schulze-paul/Video-Laboratory/releases/download/v0.1.4/Video-Laboratory-win32-x64.zip">Download</a> 
 </p>
 
 <img align="center" src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/logo_2_small.png" size=150>
