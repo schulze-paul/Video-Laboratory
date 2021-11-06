@@ -1,5 +1,5 @@
-(questionData = []),
-  (questionData[10] = {
+questionData = []
+questionData[10] = {
     formId: 10,
     question: "Is the video a collaborative project?",
     typingInput: false,
@@ -10,15 +10,15 @@
       "Not apparent",
     ],
     buttonData: [77, 1, 2, 66],
-  }),
-  (questionData[11] = {
+  }
+questionData[11] = {
     formId: 11,
     question: "If Yes, please describe it short",
     typingInput: true,
     type: "text",
     noInputData: 77,
-  }),
-  (questionData[12] = {
+  }
+questionData[12] = {
     formId: 12,
     question: "Is a person visible on the thumbnail (preview picture)?",
     typingInput: false,
@@ -31,8 +31,8 @@
       "Not apparent",
     ],
     buttonData: [77, 1, 2, 3, 4, 66],
-  }),
-  (questionData[13] = {
+  }
+questionData[13] = {
     formId: 13,
     question:
       "Is the thumbnail designed serious or is it sensational (clickbait)?",
@@ -45,8 +45,8 @@
       "Not apparent",
     ],
     buttonData: [1, 2, 3, 4, 66],
-  }),
-  (questionData[14] = {
+  }
+questionData[14] = {
     formId: 14,
     question: "How is the thumbnail designed?",
     typingInput: false,
@@ -58,94 +58,94 @@
       "Not apparent",
     ],
     buttonData: [1, 2, 3, 4, 66],
-  }),
-  (questionData[15] = {
+  }
+questionData[15] = {
     formId: 15,
     question:
       "Are there any other eye-catching characteristics (e.g. colours) of the thumbnail?",
     typingInput: true,
     type: "text",
     noInputData: 66,
-  }),
-  (questionData[17] = {
+  }
+questionData[17] = {
     formId: 17,
     question:
       "If applicable: Name of the network which belongs to the channel (see imprint), e.g. TubeOne, also related companies/enterprises",
     typingInput: true,
     type: "text",
     noInputData: 66,
-  }),
-  (questionData[18] = {
+  }
+questionData[18] = {
     formId: 18,
     question: "Is there personal website linked on the channel?",
     typingInput: false,
     buttonLabel: ["No", "Yes", "Not apparent"],
     buttonData: [77, 1, 66],
-  }),
-  (questionData[19] = {
+  }
+questionData[19] = {
     formId: 19,
     question: "TikTok?",
     typingInput: false,
     buttonLabel: ["No", "Yes", "Not apparent"],
     buttonData: [77, 1, 66],
-  }),
-  (questionData[20] = {
+  }
+questionData[20] = {
     formId: 20,
     question: "TikTok Link:",
     typingInput: true,
     type: "link",
     noInputData: 77,
-  }),
-  (questionData[21] = {
+  }
+questionData[21] = {
     formId: 21,
     question: "Instagram?",
     typingInput: false,
     buttonLabel: ["No", "Yes", "Not apparent"],
     buttonData: [77, 1, 66],
-  }),
-  (questionData[22] = {
+  }
+questionData[22] = {
     formId: 22,
     question: "Instagram Link:",
     typingInput: true,
     type: "link",
     noInputData: 77,
-  }),
-  (questionData[23] = {
+  }
+questionData[23] = {
     formId: 23,
     question: "Facebook?",
     typingInput: false,
     buttonLabel: ["No", "Yes", "Not apparent"],
     buttonData: [77, 1, 66],
-  }),
-  (questionData[24] = {
+  }
+questionData[24] = {
     formId: 24,
     question: "Facebook Link:",
     typingInput: true,
     type: "link",
     noInputData: 77,
-  }),
-  (questionData[25] = {
+  }
+questionData[25] = {
     formId: 25,
     question: "Twitter?",
     typingInput: false,
     buttonLabel: ["No", "Yes", "Not apparent"],
     buttonData: [77, 1, 66],
-  }),
-  (questionData[26] = {
+  }
+questionData[26] = {
     formId: 26,
     question: "Twitter Link:",
     typingInput: true,
     type: "link",
     noInputData: 77,
-  }),
-  (questionData[27] = {
+  }
+questionData[27] = {
     formId: 27,
     question: "Other social media platforms linked?",
     typingInput: true,
     type: "text",
     noInputData: 66,
-  }),
-  (questionData[28] = {
+  }
+questionData[28] = {
     formId: 28,
     question: "How often are videos uploaded by the channel?",
     typingInput: false,
@@ -158,16 +158,16 @@
       "Now inactive",
     ],
     buttonData: [66, 1, 2, 3, 4, 5],
-  }),
-  (questionData[31] = {
+  }
+questionData[31] = {
     formId: 31,
     question:
       "Approximate number of persons who are directly/indirectly involved in the video production",
     typingInput: false,
     buttonLabel: ["One person", "Team production", "Not apparent"],
     buttonData: [1, 2, 66],
-  }),
-  (questionData[36] = {
+  }
+questionData[36] = {
     formId: 36,
     question:
       "Which element appears in the video description before the button (see more)",
@@ -186,8 +186,8 @@
       "Embedding in playlist (it can also be a written link list)",
     ],
     buttonData: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-  }),
-  (questionData[39] = {
+  }
+questionData[39] = {
     formId: 39,
     question: "Are there links/URLs in the video description?",
     typingInput: false,
@@ -202,113 +202,113 @@
       "Not apparent",
     ],
     buttonData: [1, 2, 3, 4, 5, 6, 7, 66],
-  }),
-  (questionData[40] = {
+  }
+questionData[40] = {
     formId: 40,
     question:
       "Is there a video content- or topic introduction in the video description?",
     typingInput: false,
     buttonLabel: ["Yes", "No", "Description is empty", "Not apparent"],
     buttonData: [1, 2, 3, 66],
-  }),
-  (questionData[41] = {
+  }
+questionData[41] = {
     formId: 41,
     question:
       "Is there information about the channel in the video description?",
     typingInput: false,
     buttonLabel: ["Yes", "No", "Description is empty", "Not apparent"],
     buttonData: [1, 2, 3, 66],
-  }),
-  (questionData[42] = {
+  }
+questionData[42] = {
     formId: 42,
     question:
       "Are there credits or information about the contributors in the video description?",
     typingInput: false,
     buttonLabel: ["Yes", "No", "Description is empty", "Not apparent"],
     buttonData: [1, 2, 3, 66],
-  }),
-  (questionData[43] = {
+  }
+questionData[43] = {
     formId: 43,
     question:
       "Is there information about the video context, respectively about the creation of the video?",
     typingInput: false,
     buttonLabel: ["Yes", "No", "Description is empty", "Not apparent"],
     buttonData: [1, 2, 3, 66],
-  }),
-  (questionData[44] = {
+  }
+questionData[44] = {
     formId: 44,
     question: "Are there sources in the video description?",
     typingInput: false,
     buttonLabel: ["Yes", "No", "Description is empty", "Not apparent"],
     buttonData: [1, 2, 3, 66],
-  }),
-  (questionData[45] = {
+  }
+questionData[45] = {
     formId: 45,
     question: "Are there Calls-to-Action in the video description",
     typingInput: false,
     buttonLabel: ["Yes", "No", "Description is empty", "Not apparent"],
     buttonData: [1, 2, 3, 66],
-  }),
-  (questionData[46] = {
+  }
+questionData[46] = {
     formId: 46,
     question: "Is there a summary of the content in the video description?",
     typingInput: false,
     buttonLabel: ["Yes", "No", "Description is empty", "Not apparent"],
     buttonData: [1, 2, 3, 66],
-  }),
-  (questionData[47] = {
+  }
+questionData[47] = {
     formId: 47,
     question:
       "Does the video description reference a playlist that the video is part of?",
     typingInput: false,
     buttonLabel: ["Yes", "No", "Description is empty", "Not apparent"],
     buttonData: [1, 2, 3, 66],
-  }),
-  (questionData[48] = {
+  }
+questionData[48] = {
     formId: 48,
     question: "Which further elements appear in the video description?",
     typingInput: true,
     type: "text",
     noInputData: 66,
-  }),
-  (questionData[50] = {
+  }
+questionData[50] = {
     formId: 50,
     question: "Pinned comments?",
     typingInput: false,
     buttonLabel: ["No", "Yes", "Not apparent"],
     buttonData: [77, 1, 66],
-  }),
-  (questionData[51] = {
+  }
+questionData[51] = {
     formId: 51,
     question:
       "Are there professional questions to the video content in the comments?",
     typingInput: false,
     buttonLabel: ["Yes", "No", "Not apparent"],
     buttonData: [1, 2, 66],
-  }),
-  (questionData[52] = {
+  }
+questionData[52] = {
     formId: 52,
     question: "If yes, how often to they appear?",
     typingInput: false,
     buttonLabel: ["Rarely", "Every now and then", "Often", "Does Not apply"],
     buttonData: [1, 2, 3, 77],
-  }),
-  (questionData[53] = {
+  }
+questionData[53] = {
     formId: 53,
     question:
       "Are there professional statements to the video content in the comments?",
     typingInput: false,
     buttonLabel: ["No", "Yes", "Not apparent"],
     buttonData: [77, 1, 2],
-  }),
-  (questionData[54] = {
+  }
+questionData[54] = {
     formId: 54,
     question: "If yes, how often do they appear?",
     typingInput: false,
     buttonLabel: ["Rarely", "Every now and then", "Often", "Does Not apply"],
     buttonData: [1, 2, 3, 77],
-  }),
-  (questionData[55] = {
+  }
+questionData[55] = {
     formId: 55,
     question:
       "Are there proposals for further desired topics, for further videos, or for learning in the comments?",
@@ -322,16 +322,16 @@
       "Not apparent",
     ],
     buttonData: [77, 1, 2, 3, 4, 66],
-  }),
-  (questionData[56] = {
+  }
+questionData[56] = {
     formId: 56,
     question:
       "Are the suggestions for other desired topics from the comments on the channel implemented?",
     typingInput: false,
     buttonLabel: ["No", "Yes", "There are no proposals", "Not apparent"],
     buttonData: [77, 1, 2, 66],
-  }),
-  (questionData[57] = {
+  }
+questionData[57] = {
     formId: 57,
     question:
       "Is there feedback on the video design, e.g. I like that, you could have represented this differently, in the comments?",
@@ -344,15 +344,15 @@
       ,
     ],
     buttonData: [77, 1, 2, 66],
-  }),
-  (questionData[58] = {
+  }
+questionData[58] = {
     formId: 58,
     question: "Do commenters thank the video producer in the comments?",
     typingInput: false,
     buttonLabel: ["No", "Yes", "Not apparent"],
     buttonData: [77, 1, 66],
-  }),
-  (questionData[59] = {
+  }
+questionData[59] = {
     formId: 59,
     question:
       "Do the commenters question the video contents and the sources critically in the comments?",
@@ -365,8 +365,8 @@
       "Not apparent",
     ],
     buttonData: [77, 1, 2, 3, 66],
-  }),
-  (questionData[60] = {
+  }
+questionData[60] = {
     formId: 60,
     question: "What are the comments like?",
     typingInput: false,
@@ -379,22 +379,22 @@
       "Not apparent",
     ],
     buttonData: [1, 2, 3, 4, 5, 66],
-  }),
-  (questionData[61] = {
+  }
+questionData[61] = {
     formId: 61,
     question: "Example positive comment",
     typingInput: true,
     type: "text",
     noInputData: 66,
-  }),
-  (questionData[62] = {
+  }
+questionData[62] = {
     formId: 62,
     question: "Example negative comment",
     typingInput: true,
     type: "text",
     noInputData: 66,
-  }),
-  (questionData[63] = {
+  }
+questionData[63] = {
     formId: 63,
     question: "Is there negative feedback to the producers in the comments?",
     typingInput: false,
@@ -407,15 +407,15 @@
       "Not apparent",
     ],
     buttonData: [77, 1, 2, 3, 4, 66],
-  }),
-  (questionData[64] = {
+  }
+questionData[64] = {
     formId: 64,
     question: "Is there a dialogue among the viewers in the comments?",
     typingInput: false,
     buttonLabel: ["No", "Yes", "Not apparent"],
     buttonData: [77, 1, 66],
-  }),
-  (questionData[65] = {
+  }
+questionData[65] = {
     formId: 65,
     question:
       "Do the comments refer to the appearances of the people visible in the video?",
@@ -428,15 +428,15 @@
       "No",
     ],
     buttonData: [66, 1, 2, 3, 4],
-  }),
-  (questionData[66] = {
+  }
+questionData[66] = {
     formId: 66,
     question: "If yes, add comment",
     typingInput: true,
     type: "text",
     noInputData: 66,
-  }),
-  (questionData[67] = {
+  }
+questionData[67] = {
     formId: 67,
     question:
       "How intensive do the producers react through their own comments related to the comments?",
@@ -451,8 +451,8 @@
       "Not apparent",
     ],
     buttonData: [77, 1, 2, 3, 4, 5, 66],
-  }),
-  (questionData[68] = {
+  }
+questionData[68] = {
     formId: 68,
     question:
       "Do the producers ask the viewers to comment on the content or the design of the video?",
@@ -464,4 +464,4 @@
       "Not apparent",
     ],
     buttonData: [77, 1, 2, 66],
-  });
+  };
