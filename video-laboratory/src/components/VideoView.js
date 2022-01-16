@@ -8,7 +8,7 @@ const VideoView = ({link}) => {
                 url={link} 
                 playing={true} 
                 controls={true}
-                sound={false} 
+                sound="false" 
                 width="100%"
                 height="100%"
             />

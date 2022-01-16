@@ -71,7 +71,7 @@ Link form
 left screen
 */
 .left-screen {
-  background-color: rgb(229, 229, 236);
+  background-color: rgb(224, 227, 233);
   max-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -104,36 +104,122 @@ video comments display
   flex: 1;
   color: rgb(87, 87, 87);
   background-color: lightblue;
-}
-.comment-display {
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-top: 0;
-  margin-bottom: 0;
-  background-color: rgb(229, 229, 236);
 
   border-style: solid;
-  border-color: darkgray;
+  border-color: rgb(151, 150, 150);
+  border-width: 0px;
   border-top-width: 1px;
+}
+.comment-display {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: rgb(234, 237, 243);
+
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+  border-width: 0px;
   border-bottom-width: 0px;
+  font-size: smaller;
 }
 
 .video-data-display {
   align-items: center;
+  padding-bottom: 10px;
+
+  background-color: rgb(255, 255, 255);
 }
+
 
 .video-title {
   padding-left: 20px;
   padding-right: 20px;
-  color: rgb(66, 66, 66);
+  color: rgb(46, 46, 46);
   font-size: large;
 }
+.channel-data {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: -10px;
+}
+
 .channel-name {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: -15px;
+  padding-left: 10px;
   color: rgb(66, 66, 66);
   font-size: smaller;
+  float:left; 
+  display:inline;
+  padding:8px;
+
+}
+
+.channel-thumb {
+  height: 40px;
+  padding: 10px;
+  float:left; 
+  display:inline;
+}
+
+
+/*
+link form
+*/
+
+.link-form {
+  text-align: center;
+  height: 100vh;
+  background-color: rgb(224, 227, 233);
+
+  display: block;
+  align-items: center ;
+}
+
+
+.logo {
+  height: 400px;
+
+  padding: 100px;
+}
+
+.link-container {
+  background-color: green;
+  border-radius: 50px;
+  width:760px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  
+  display: flex;
+  overflow: hidden;
+}
+
+.link-input {
+  width: 600px;
+  border-width: 0;
+  
+  font-size: 20px;
+
+  padding: 15px;
+
+  outline: none;
+
+  border-width: 0px;
+  border-right-width: 1px;
+  border-color: rgb(207, 207, 207);
+
+  color:rgb(100, 100, 100);
+}
+
+.link-submit {
+  width: 160px;
+  font-size: 20px;
+  border-width: 0px;
+  padding: 15px;
+
+  background-color: rgb(243, 243, 243);
+  color:rgb(126, 126, 126);
+
 }

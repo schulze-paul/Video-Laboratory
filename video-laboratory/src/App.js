@@ -84,6 +84,8 @@ function App() {
                     comments={sortedData.comments}
                     onVideoClick={onVideoClick}
                     onChannelClick={onChannelClick}
+                    channelThumb={sortedData.channel.channelThumb}
+                    questions={questionData}
                 /> 
             </div>    
         )

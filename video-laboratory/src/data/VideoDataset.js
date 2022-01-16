@@ -24,7 +24,8 @@ let downloadData = async function(link, apiKey){
     try {
         // get the video data
         var rawVideoData = await $.getJSON(apiVideoUrl, videoOptions);  
-                
+        console.log(rawVideoData);
+        
         // set up channel options for GET request
         var channelId = await rawVideoData.items[0].snippet.channelId;
         var channelOptions = {
@@ -34,7 +35,8 @@ let downloadData = async function(link, apiKey){
         };
         // get channel data 
         var rawChannelData = await $.getJSON(apiChannelUrl, channelOptions);
-        
+        console.log(rawChannelData);
+
         // set up comments options for the GET request
         var commentsOptions = {
             part: commentsPart,
@@ -102,7 +104,7 @@ let transformData = async function(rawData){
     );
     sortedData.channel.subsCount = rawChannelData.items[0].statistics.subscriberCount;
     sortedData.channel.videoCount = rawChannelData.items[0].statistics.videoCount;
-    
+    sortedData.channel.channelThumb = rawChannelData.items[0].snippet.thumbnails.default.url;
     
     // transform the comment data
     var commentArray = []

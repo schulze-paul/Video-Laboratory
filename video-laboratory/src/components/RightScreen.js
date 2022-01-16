@@ -1,7 +1,9 @@
-const RightScreen = () => {
+import Questions from "./Questions"
+
+const RightScreen = ({questions}) => {
     return (
         <div>
-            RightScreen      
+            <Questions questions={questions}/>
         </div>
     )
 }

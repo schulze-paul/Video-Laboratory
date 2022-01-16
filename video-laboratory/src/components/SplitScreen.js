@@ -1,7 +1,8 @@
 import SplitPane from 'react-split-pane';
 import LeftScreen from './LeftScreen.js';
+import RightScreen from './RightScreen.js';
 
-const SplitScreen = ({link, title, channel, comments, onVideoClick, onChannelClick}) => {
+const SplitScreen = ({link, title, channel, comments, onVideoClick, onChannelClick, channelThumb, questions}) => {
     return (
         <SplitPane split="vertical" defaultSize="30%">
             <LeftScreen 
@@ -10,8 +11,11 @@ const SplitScreen = ({link, title, channel, comments, onVideoClick, onChannelCli
                 channel={channel} 
                 comments={comments}
                 onVideoClick={onVideoClick}
-                onChannelClick={onChannelClick}/>
-            <p>right side</p>
+                onChannelClick={onChannelClick}
+                channelThumb={channelThumb}/>
+            <RightScreen
+                questions={questions}
+            />
         </SplitPane>
     )
 }
