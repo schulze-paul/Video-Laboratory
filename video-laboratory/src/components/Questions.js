@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import Question from './Question'
 
-const Questions = ({questions}) => {
+const Questions = ({questions, onAnswerButtonPressed}) => {
 
     if (!questions) {
         return (
@@ -11,7 +11,17 @@ const Questions = ({questions}) => {
     else {
         return (
             <div className='questions-display'>
-                {questions.filter(question => question !== null).map((question) => (<Question className='question-display' key={question.formId} question={question}/>))}    
+                {questions
+                    .filter(question => question !== null)
+                    .map((question) => (
+                        <Question 
+                            className='question-display' 
+                            key={question.formId} 
+                            question={question} 
+                            onAnswerButtonPressed={onAnswerButtonPressed}
+                        />
+                    ))
+                }    
             </div>
         )
     }

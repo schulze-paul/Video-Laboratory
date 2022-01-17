@@ -30,7 +30,7 @@ const LinkForm = ({submitVideoLink}) => {
                 <input 
                     className='link-submit' 
                     type='submit' 
-                    value='get video data'
+                    value='code video'
                 />
             </div>
         </form>

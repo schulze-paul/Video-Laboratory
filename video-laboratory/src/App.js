@@ -17,6 +17,8 @@ function App() {
     const [showLoading, setShowLoading] = useState(false)
     const [sortedData, setSortedData] = useState({})
 
+    const answersToQuestions = []
+
     const onVideoClick = () =>{
         const electron = require("electron");
         electron.shell.openExternal(sortedData.video.link)
@@ -60,6 +62,13 @@ function App() {
         return transformedData
     }
 
+    // button press
+    const onAnswerButtonPressed = (formId, index) => {
+        const answerToQuestion = questionData.questionData[formId].buttons.buttonData[index]
+        answersToQuestions[formId] = answerToQuestion
+        console.log(answersToQuestions)
+    }
+
     if (showLoading) {
         return (
             <div className="App">
@@ -87,6 +96,7 @@ function App() {
                     onChannelClick={onChannelClick}
                     channelThumb={sortedData.channel.channelThumb}
                     questions={questionData.questionData}
+                    onAnswerButtonPressed={onAnswerButtonPressed}
                 /> 
             </div>
         )

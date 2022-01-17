@@ -1,6 +1,6 @@
 import QuestionAnswerButton from "./QuestionAnswerButton"
 
-const Question = ({question}) => {
+const Question = ({question, onAnswerButtonPressed}) => {
   console.log(question)
     if (question.typingInput) {
         return (
@@ -30,6 +30,7 @@ const Question = ({question}) => {
                     formId={question.formId}
                     index={index}
                     question={question}
+                    onAnswerButtonPressed={onAnswerButtonPressed}
                   />
                 ))
               }
