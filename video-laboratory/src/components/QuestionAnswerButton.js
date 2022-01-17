@@ -1,12 +1,11 @@
 
-const QuestionAnswerButtons = ({formId, buttonData, buttonLabel}) => {
+const QuestionAnswerButton = ({formId, index, question}) => {
+    console.log(question)
     return (
-            
-        <div class="buttonOpen" id={"button" + index + formId}
-        >
-        <label>
-        ${buttonLabel[index]}
-        </label>
+        <div className="buttonOpen" id={"button" + index + formId}>
+            <label>
+                {question.buttons.buttonLabel[index]}
+            </label>
         </div>
     )
 }

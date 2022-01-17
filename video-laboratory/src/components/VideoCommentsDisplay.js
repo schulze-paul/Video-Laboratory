@@ -7,7 +7,6 @@ const VideoCommentsDisplay = ({comments}) => {
         )
     }
     else {
-        console.log(comments)
         return (
             <div className='video-comments-display'>
                 {comments.map((comment) => (<p className='comment-display' key={comment.commentId}>{comment.text}</p>))}    

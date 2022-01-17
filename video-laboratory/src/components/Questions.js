@@ -2,16 +2,16 @@ import PropTypes from 'prop-types'
 import Question from './Question'
 
 const Questions = ({questions}) => {
+
     if (!questions) {
         return (
             <div></div>
         )
     }
     else {
-        console.log(questions)
         return (
             <div className='questions-display'>
-                {questions.map((question) => (<Question className='question-display' key={question.formId} question={question}/>))}    
+                {questions.filter(question => question !== null).map((question) => (<Question className='question-display' key={question.formId} question={question}/>))}    
             </div>
         )
     }

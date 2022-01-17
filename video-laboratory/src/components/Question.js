@@ -1,9 +1,11 @@
+import QuestionAnswerButton from "./QuestionAnswerButton"
 
 const Question = ({question}) => {
+  console.log(question)
     if (question.typingInput) {
         return (
             
-          <article className="typeArticle" data-key={question.formId}>
+          <article className="type-article" data-key={question.formId}>
           <p class="question">{question.question}</p>
           <input
             type={question.type}
@@ -16,7 +18,24 @@ const Question = ({question}) => {
         )
     }
     if (!question.typingInput) {
-        return <div></div>
+        return (
+          <article className="button-article" id="article${formId}">
+            <p class="question">{question.question}</p>
+            <div class="buttonContainer">
+              {
+                question.buttons.buttonIndeces.map((index) => (
+                  <QuestionAnswerButton 
+                    className='buttonOpen' 
+                    key={index}
+                    formId={question.formId}
+                    index={index}
+                    question={question}
+                  />
+                ))
+              }
+            </div>
+          </article>
+        )
     }
 }
 

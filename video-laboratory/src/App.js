@@ -4,13 +4,14 @@ import LinkForm from './components/LinkForm.js'
 import dataFunctions from './data/VideoDataset.js'
 import apiKey from'./data/ApiKey.js'
 import SplitScreen from './components/SplitScreen';
-import questionData from './data/questionsInputData';
+import questionData from './data/questionInputData.json';
 
 
 const downloadData = dataFunctions.downloadData
 const transformData = dataFunctions.transformData
 
 function App() {
+
     const [link, setLink] = useState('')
     const [showSplit, setShowSplit] = useState(false)
     const [showLoading, setShowLoading] = useState(false)
@@ -85,9 +86,9 @@ function App() {
                     onVideoClick={onVideoClick}
                     onChannelClick={onChannelClick}
                     channelThumb={sortedData.channel.channelThumb}
-                    questions={questionData}
+                    questions={questionData.questionData}
                 /> 
-            </div>    
+            </div>
         )
     }
 }
