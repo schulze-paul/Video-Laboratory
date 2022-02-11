@@ -2,6 +2,9 @@
 
 # Video Laboratory
 
+<p align = center>
+	Author: Paul Schulze • <a href="https://schulze-paul.github.io">Website</a>
+</p>
 <p align=center>
 	<a href="#1-motivation">Motivation</a> • <a href="#2-functionality">Functionality</a> • <a href="#3-development-and-key-design-decisions">Development and Key Design Decisions</a> • <a href="#4-installation">Installation</a> • <a href="https://github.com/schulze-paul/Video-Laboratory/releases/download/v0.1.4/Video-Laboratory-win32-x64.zip">Download</a> 
 </p>
