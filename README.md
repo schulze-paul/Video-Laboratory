@@ -1,24 +1,21 @@
 
+<img align="center" src="https://github.com/schulze-paul/Video-Laboratory/blob/split_view/images/screenshots/logo_video_lab2.png?raw=true" height=70>
 
-# Video Laboratory
+# VideoLab Classification Tool for Researchers
 
-<p align = center>
-	Author: Paul Schulze • <a href="https://schulze-paul.github.io">Website</a>
+<p align>
+	Author: <a href="https://schulze-paul.github.io">Paul Schulze</a>
 </p>
-<p align=center>
+<p align>
 	<a href="#1-motivation">Motivation</a> • <a href="#2-functionality">Functionality</a> • <a href="#3-development-and-key-design-decisions">Development and Key Design Decisions</a> • <a href="#4-installation">Installation</a> • <a href="https://github.com/schulze-paul/Video-Laboratory/releases/download/v0.1.4/Video-Laboratory-win32-x64.zip">Download</a> 
 </p>
 
-<img align="center" src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/logo_2_small.png" size=150>
 
 Video Laboratory is an automated video classification tool that helps video research coders reduce errors while coding video data and improve their coding speed. It is written in `JavaScript` and `HTML`/`CSS` using the `Electron` framework.
 
 <p align="center">
-	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_overview.PNG" alt="GUI overview" title="GUI overview" width="450"/>
+	<img src="https://github.com/schulze-paul/Video-Laboratory/blob/split_view/images/screenshots/VideoLab_demo_video.gif?raw=true" alt="GUI overview" title="GUI overview" width="800"/>
 </p>
-
-<h6 align="center">Made by Paul Schulze • :globe_with_meridians: <a href="https://schulze-paul.github.io">https://schulze-paul.github.io</a></h6>
-
 
 ## 1. Motivation
 
