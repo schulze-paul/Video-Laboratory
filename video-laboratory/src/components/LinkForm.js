@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 const LinkForm = ({submitVideoLink}) => {
-    const [link, setLink] = useState('https://www.youtube.com/watch?v=XXYlFuWEuKI') //
+    const [link, setLink] = useState('https://www.youtube.com/watch?v=7Y9nX0QHqzA') //
 
     
 

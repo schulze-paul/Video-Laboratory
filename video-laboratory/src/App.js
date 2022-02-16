@@ -72,7 +72,7 @@ function App() {
     if (showLoading) {
         return (
             <div className="App">
-                <p>loading</p>
+                <p></p>
             </div>    
         )
     }
