@@ -78,7 +78,7 @@ function App() {
     }
     if (!showSplit && !showLoading) {
         return (
-            <div className="App">
+            <div className="start-screen">
                 <LinkForm submitVideoLink={submitVideoLink}/>
             </div>
         )

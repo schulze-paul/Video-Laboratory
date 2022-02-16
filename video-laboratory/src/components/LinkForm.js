@@ -18,7 +18,12 @@ const LinkForm = ({submitVideoLink}) => {
     return (
         <form className='link-form' onSubmit={onSubmit}>
             
-            <img className="logo" src="https://raw.githubusercontent.com/schulze-paul/Video-Laboratory/split_view/images/screenshots/logo_2_large.png"/>
+            <div className="title-container">
+                <h1 className="title">VideoLab.</h1>
+
+                <p className="subtitle">Video coding simpified.</p> 
+            </div>
+
 
             <div className='link-container'>
                 <input 
@@ -29,8 +34,8 @@ const LinkForm = ({submitVideoLink}) => {
                 />
                 <input 
                     className='link-submit' 
-                    type='submit' 
-                    value='code video'
+                    type='image' 
+                    src="https://raw.githubusercontent.com/schulze-paul/Video-Laboratory/split_view/images/screenshots/logo_2_large.png"
                 />
             </div>
         </form>

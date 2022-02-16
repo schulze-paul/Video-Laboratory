@@ -4,7 +4,7 @@ import RightScreen from './RightScreen.js';
 
 const SplitScreen = ({link, title, channel, comments, onVideoClick, onChannelClick, channelThumb, questions, onAnswerButtonPressed}) => {
     return (
-        <SplitPane split="vertical" defaultSize="30%">
+        <SplitPane className='split-screen' split="vertical" defaultSize="30%">
             <LeftScreen 
                 link={link} 
                 title={title} 
