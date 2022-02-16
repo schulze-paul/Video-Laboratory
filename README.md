@@ -14,7 +14,7 @@
 Video Laboratory is an automated video classification tool that helps video research coders reduce errors while coding video data and improve their coding speed. It is written in `JavaScript` and `HTML`/`CSS` using the `Electron` framework.
 
 <p align="center">
-	<img src="https://github.com/schulze-paul/Video-Laboratory/blob/split_view/images/screenshots/VideoLab_demo_video.gif?raw=true" alt="GUI overview" title="GUI overview" width="852"/>
+	<img src="https://github.com/schulze-paul/Video-Laboratory/blob/split_view/images/screenshots/VideoLab_demo_video.gif?raw=true" alt="Video Lab Demo" title="GUI overview" width="852"/>
 </p>
 
 ## How it works
