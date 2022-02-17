@@ -3,19 +3,53 @@
 
 # VideoLab Classification Tool for Researchers
 
-<p align>
+<p>
 	Author: <a href="https://schulze-paul.github.io">Paul Schulze</a>
 </p>
-<p align>
+<p>
 	<a href="#1-motivation">Motivation</a> • <a href="#2-functionality">Functionality</a> • <a href="#3-development-and-key-design-decisions">Development and Key Design Decisions</a> • <a href="#4-installation">Installation</a> • <a href="https://github.com/schulze-paul/Video-Laboratory/releases/download/v0.1.4/Video-Laboratory-win32-x64.zip">Download</a> 
 </p>
-
-
-Video Laboratory is an automated video classification tool that helps video research coders reduce errors while coding video data and improve their coding speed. It is written in `JavaScript` and `HTML`/`CSS` using the `Electron` framework.
 
 <p align="center">
 	<img src="https://github.com/schulze-paul/Video-Laboratory/blob/split_view/images/screenshots/VideoLab_demo_video.gif?raw=true" alt="Video Lab Demo" title="GUI overview" width="852"/>
 </p>
+
+## Welcome to VideoLab
+
+VideoLab is an automated video classification tool that automatically collects available data about a video from the YouTube API and makes it easy to manually classify the video and analyse it further.
+You can comfortably fill the form while the video plays right inside of the interface with all of the familiar controls that you find on YouTube. Comments are also visible right below the video.
+
+VideoLab is built on the `JavaScript` library [ReactJS](https://reactjs.org/) using the [Electron](https://www.electronjs.org/) framework.
+
+- [Installation](#installation)
+- [How It Works](#how-it-works)
+
+
+## Installation
+
+### Windows
+
+The newest release [v0.1.4](https://github.com/bl4ckp4nther4/Video-Laboratory/releases/tag/v0.1.4) is available [here](https://github.com/bl4ckp4nther4/Video-Laboratory/releases/download/v0.1.4/Video-Laboratory-win32-x64.zip).
+
+### Electron
+
+This app can be run on any platform in Electron. Installation requires:
+
+```
+electron: 9.0.4
+electron-packager: 14.2.1
+jest: 26.0.1
+core-js: 3.6.5
+dialog: 0.3.1
+electron-dialog: 2.0.0
+excels: 4.0.1
+fs: 0.0.1
+jquery: 3.5.1
+react-app-polyfill: 1.0.6
+regenerator-runtime: 0.13.5
+```
+
+
 
 ## How it works
 
@@ -179,26 +213,3 @@ I created a `Python` script that dynamically creates a `JavaScript` text file wi
 }),
 ```
 
-# 4. Installation
-
-### Windows
-
-The newest release [v0.1.4](https://github.com/bl4ckp4nther4/Video-Laboratory/releases/tag/v0.1.4) is available [here](https://github.com/bl4ckp4nther4/Video-Laboratory/releases/download/v0.1.4/Video-Laboratory-win32-x64.zip).
-
-### Electron
-
-This app can be run on any platform in Electron. Installation requires:
-
-```
-electron: 9.0.4
-electron-packager: 14.2.1
-jest: 26.0.1
-core-js: 3.6.5
-dialog: 0.3.1
-electron-dialog: 2.0.0
-excels: 4.0.1
-fs: 0.0.1
-jquery: 3.5.1
-react-app-polyfill: 1.0.6
-regenerator-runtime: 0.13.5
-```
