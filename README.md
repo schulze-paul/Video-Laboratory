@@ -50,12 +50,12 @@ regenerator-runtime: 0.13.5
 
 ## How it works
 
-You paste the link and everything else is taken care of. VideoLab sends a request to the YouTube API along with the video id and saves relevant data such as:
+You paste the link and everything else is taken care of behind the scenes. VideoLab sends a request to the YouTube API along with the video id and saves relevant data such as:
 - Video: `link`, `title`, `duration`, `upload_date`, `view_count`, `upvote_count`, `comments_count`
 - Channel: `link`, `name`, `join_date`, `video_count`, `subscribers_count`
 
 Using `react-player`, VideoLab starts playing the video and shows the video title, the channel title, the channel icon and the comments underneath.  
-Meanwhile,
+Meanwhile, you can start answering some of the questions that are more complicated to answer. 
 
 
 
