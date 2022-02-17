@@ -46,82 +46,20 @@ react-app-polyfill: 1.0.6
 regenerator-runtime: 0.13.5
 ```
 
-
-
 ## How it works
 
 You paste the link and everything else is taken care of behind the scenes. VideoLab sends a request to the YouTube API along with the video id and saves relevant data such as:
 - Video: `link`, `title`, `duration`, `upload_date`, `view_count`, `upvote_count`, `comments_count`
 - Channel: `link`, `name`, `join_date`, `video_count`, `subscribers_count`
 
-Using `react-player`, VideoLab starts playing the video and shows the video title, the channel title, the channel icon and the comments underneath.  
-Meanwhile, you can start answering some of the questions that are more complicated to answer. 
+Using `react-player`, VideoLab starts playing the video and shows the video title, the channel title, the channel icon and the comments underneath.
+Meanwhile, you can start answering some of the questions that are more complicated in nature. 
 
+After you are done, the data is exported into an excel file that can be integrated into further research.
 
+## Development and Key Design Decisions
 
-
-
-This application was needed in the context of a research project where videos and channels on YouTube are analyzed.
-The application was part of the data collection process.
-The data collection process that was used before consisted of either manually copying data from the website into an excel sheet or entering a number in the excel sheet referring to the answer to a multiple choice question.
-This had to be done for hundreds of videos.
-
-<p align="center">
-	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/old_data_collection_process.PNG?" alt="Old data collection process" title="Old data collection process"/>
-</p>
-This process had two problems that could easily be fixed with software:
-
-1. Manually copying the data from the website is very inefficient.
-2. Writing a number as an answer to a multiple choice question is very unintuitive. It sometimes required scrolling to get from the excel cell with the question and the answer codes to the cell where the answer needs to be written.
-
-Especially the first problem motivated me to start the project. The second problem was addressed later for completeness.
-
-## 2. Functionality
-
-### Data Retrieval from the YouTube API
-
-<p>
-	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/video_data.PNG?" alt="preview video data" title="preview video data" width="250"/>
-</p>
-
-Some data that is needed is readily available through the `YouTube API`. This includes the following data:
-
-- Video data includes: `link`, `title`, `duration`, `upload_date`, `view_count`, `upvote_count`, `comments_count`
-- Channel data includes: `link`, `name`, `join_date`, `video_count`, `subscribers_count`
-
-
-
-
-Using the `link` to a video as starting point, data about the video is collected through the `YouTube API`.
-With the channel link collected from the video data, the needed channel data is retrieved from the `YouTube API`.
-All this data is cached while the user fills out the form.
-
-### Manual Data Entry
-
-Some required data is not directly available through the `YouTube API` or requires interpretation of for example the video content or comments. This data is collected manually through a form where the user can click on the answer to a multiple choice question or enter text in a text field.
-Questions that need to be manually filled out include:
-
-> Are there any other eye-catching characteristics (e.g. colors) of the thumbnail?
->
-> How often are videos uploaded by the channel?
->
-> Is there negative feedback to the producers in the comments?
-
-The answers are saved along the data from the `YouTube API`.
-
-<p>
-	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/form_multiple_choice.PNG" alt="preview form" title="preview form" width="550"/>
-</p>
-
-### Data Transformation and Export
-
-At this point all the required data is available. The next step is to transform the raw data into the required format needed in the excel sheet. For example the `YouTube API` returns the upload time of a video as `datetime`, whereas in the excel we just need the date in the format `DD.MM.YYYY`. After transformation, each data point gets an excel cell assigned.
-
-An excel sheet is created and the data is written into the excel sheet.
-
-## 3. Development and Key Design Decisions
-
-### Why Electron?
+### Electron
 
 <img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/384px-Electron_Software_Framework_Logo.svg.png" alt="Electron"
 	title="Electron" width="150" />
@@ -133,35 +71,7 @@ I wanted
 - a fast development process
 - cross-platform usability
 
-At the time I had strong experience in `MATLAB`, `Python` and `Java` and knew little about `JavaScript` and `HTML`/`CSS`.
-
-I had a lot of `MATLAB` experience and strongly considered using it for this project. I was very familiar with the syntax and had already developed a GUIs in `MATLAB`. The development process overall probably would have gone a lot smoother with using `MATLAB`, especially working with the `YouTube API`. However I decided that it was not the optimal solution to the problem.
-
-`Java` was another strong candidate as I already had experience in developing GUIs in `Java`, but in my research I found that is was mostly considered outdated and not the best candidate for the project.
-
-From my research I found that some of the best platforms for a good GUI are `Electron` and `C++`. `C++` is favored for lightweight applications where performance is the highest priority. However the development time for `C++` would have been much higher than electron. This is why I decided against `C++`.
-
-I had no experience in developing GUIs in `Python` and after looking into it I quickly decided against it. As with `MATLAB`, developing the data handling would have been much faster in `Python`, but I was not satisfied with the GUI development options.
-
-After a lot of research and trials in `MATLAB`, `Python` and `Electron`, I decided to use the `Electron` framework because it promised a good GUI with the most control. Also `JavaScript` and `HTML`/`CSS` are some of the most important front end platforms generally and with the syntax similarity of `JavaScript` to `Java`, where I had experience, I decided to work with `Electron`.
-
-### Creating the GUI in HTML/CSS
-
-<p align="center">
-	<img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/GUI_detail.PNG" alt="GUI detail" title="GUI detail" width="550"/>
-</p>
-
-The main objective of the GUI was to reduce user errors and the time of completing the task for one video. This was achieved by:
-
-- showing as much information as possible on the screen
-- showing the questions and answers in clear, bold letters
-- showing clearly which answers are selected
-- showing the banner with base video data on always on top
-- giving quick access to the video web page, channel web page and a video search web page
-
-User errors might include: putting the answer to a question in the wrong excel cell, confusing the code of two answers, not filling out every answer and writing durations or dates in the wrong format. All of these errors are made impossible with using the application.
-
-Making the whole process of answering each question more streamlined does not only reduce errors, but allows the user to spend their time thinking about the question and not about answer codes and excel cells.
+### React
 
 ### Getting the Data from YouTube
 
