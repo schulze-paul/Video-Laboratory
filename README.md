@@ -6,9 +6,6 @@
 <p>
 	Author: <a href="https://schulze-paul.github.io">Paul Schulze</a>
 </p>
-<p>
-	<a href="#1-motivation">Motivation</a> • <a href="#2-functionality">Functionality</a> • <a href="#3-development-and-key-design-decisions">Development and Key Design Decisions</a> • <a href="#4-installation">Installation</a> • <a href="https://github.com/schulze-paul/Video-Laboratory/releases/download/v0.1.4/Video-Laboratory-win32-x64.zip">Download</a> 
-</p>
 
 <p align="center">
 	<img src="https://github.com/schulze-paul/Video-Laboratory/blob/split_view/images/screenshots/VideoLab_demo_video.gif?raw=true" alt="Video Lab Demo" title="GUI overview" width="852"/>
@@ -16,8 +13,8 @@
 
 ## Welcome to VideoLab
 
-VideoLab is an automated video classification tool that automatically collects available data about a video from the YouTube API and makes it easy to manually classify the video and analyse it further.
-You can comfortably fill the form while the video plays right inside of the interface with all of the familiar controls that you find on YouTube. Comments are also visible right below the video.
+VideoLab is an automated video classification tool that automatically collects available data about a video from the YouTube API. But some questions can not be answered with data from YouTube, and this is where the real value of VideoLab lies.  
+You can comfortably fill the form while the video plays right inside of the interface with all of the familiar controls that you know from YouTube. Comments are also visible right below the video.
 
 VideoLab is built on the `JavaScript` library [ReactJS](https://reactjs.org/) using the [Electron](https://www.electronjs.org/) framework.
 
@@ -53,9 +50,12 @@ regenerator-runtime: 0.13.5
 
 ## How it works
 
-You just submit a link to a video on YouTube and all the data that is 
+You paste the link and everything else is taken care of. VideoLab sends a request to the YouTube API along with the video id and saves relevant data such as:
+- Video: `link`, `title`, `duration`, `upload_date`, `view_count`, `upvote_count`, `comments_count`
+- Channel: `link`, `name`, `join_date`, `video_count`, `subscribers_count`
 
-
+Using `react-player`, VideoLab starts playing the video and shows the video title, the channel title, the channel icon and the comments underneath.  
+Meanwhile,
 
 
 
@@ -86,8 +86,11 @@ Especially the first problem motivated me to start the project. The second probl
 
 Some data that is needed is readily available through the `YouTube API`. This includes the following data:
 
-- Video data includes: `link`, `title`, `duration`, `upload_date`, `view_count`, `upvote_count`, `downvote_count`, `comments_count`
+- Video data includes: `link`, `title`, `duration`, `upload_date`, `view_count`, `upvote_count`, `comments_count`
 - Channel data includes: `link`, `name`, `join_date`, `video_count`, `subscribers_count`
+
+
+
 
 Using the `link` to a video as starting point, data about the video is collected through the `YouTube API`.
 With the channel link collected from the video data, the needed channel data is retrieved from the `YouTube API`.
