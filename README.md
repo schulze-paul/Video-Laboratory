@@ -62,7 +62,7 @@ After you are done, the data is exported into an excel file that can be integrat
 ### Electron
 
 <img src="https://github.com/bl4ckp4nther4/Video-Categorization-Application/blob/master/images/screenshots/384px-Electron_Software_Framework_Logo.svg.png" alt="Electron"
-	title="Electron" width="150" />
+	title="Electron" width="70" />
 
 Starting out with this project, the first decision I had to make was what programming language / platform to use. I had some general requirements to the project that I considered key:
 I wanted
@@ -71,7 +71,19 @@ I wanted
 - a fast development process
 - cross-platform usability
 
+Electron was the best choice because it met all of my requirements while being very flexible with the UX/UI design.
+I had to learn how to work with `JavaScript` and Electron for this project, but I believe it was a success.
+
 ### React
+
+<img src="https://github.com/schulze-paul/Video-Laboratory/blob/master/images/screenshots/react_icon.png?raw=true" alt="Electron"
+	title="Electron" width="70" />
+
+I was able to work quite well with pure `JavaScript`, but I wanted some features that would be hard to implement without a framework.
+A video player in the UI and a flexible devider that changes the size of the video section and the size of the form section.
+I also wanted two different pages for each step in using the program.
+
+All of these considerations led me to use a JavaScript library, with ReactJS being the most popular, so I went with ReactJS.
 
 ### Getting the Data from YouTube
 
@@ -98,10 +110,6 @@ channel:
 	subsCount: "58200000"
 	viscount: "630"00"
 ```
-
-### Working in JavaScript
-
-Working in `JavaScript` was new and the asynchronous and nested functionality of requesting the video data `JSON`, then waiting for the reply, then based on the reply requesting the channel data `JSON` and again waiting for the reply was very confusing at first. I found that working with the excel sheet was unintuitive, and I was not happy with the way I implemented this functionality in the end. However it worked fine, so I left it as it was. This is where my lack of experience in `JavaScript` hurt the development process.
 
 ### Converting the Questions and Answers to JavaScript in Python
 
